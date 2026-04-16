@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Registration - ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: var(--color-surface); padding-top: var(--space-xxl); padding-bottom: var(--space-xxl); }
+  </style>
+</head>
+<body>
+
+  <div class="container" style="max-width: 600px;">
+    
+    <div class="text-center mb-xl">
+      <a href="index.html" class="logo mb-md">ExecBoard MX</a>
+      <h1 style="font-size: 2rem;">Register Your Company</h1>
+      <p class="text-muted">Join top LATAM employers to hire vetted C-Level and VP talent.</p>
+    </div>
+
+    <div class="card p-xl mb-lg">
+      <h2 class="mb-lg" style="font-size: 1.25rem;">Administrator Details</h2>
+      
+      <form>
+        <div class="row">
+          <div class="col col-6 form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Carlos">
+          </div>
+          <div class="col col-6 form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Ruiz">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Work Email <span class="text-muted font-normal">(must be a company domain)</span></label>
+          <input type="email" class="form-control" placeholder="carlos@company.mx">
+        </div>
+
+        <div class="form-group mb-0">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Min 8 characters">
+        </div>
+      </form>
+    </div>
+
+    <div class="card p-xl">
+      <h2 class="mb-lg" style="font-size: 1.25rem;">Company Setup</h2>
+      
+      <form>
+        <div class="form-group">
+          <label class="form-label">Company Legal Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Empresa Innovadora S.A. de C.V.">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Company Website</label>
+          <input type="url" class="form-control" placeholder="https://www.company.mx">
+        </div>
+
+        <div class="row mb-lg">
+          <div class="col col-6 form-group mb-0">
+            <label class="form-label">Industry</label>
+            <select class="form-control">
+              <option>Technology</option>
+              <option>Finance</option>
+              <option>Healthcare</option>
+              <option>Logistics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col col-6 form-group mb-0">
+            <label class="form-label">Company Size</label>
+            <select class="form-control">
+              <option>1-50 Employees</option>
+              <option>51-200 Employees</option>
+              <option>201-1000 Employees</option>
+              <option>1000+ Employees</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="p-sm mt-lg mb-xl rounded" style="background-color: var(--color-warning-bg); border: 1px solid var(--color-warning-border);">
+           <p class="m-0 text-warning font-semibold" style="font-size: 0.875rem; color: var(--color-warning-text);">Note: All employer accounts undergo manual verification before jobs can be published.</p>
+        </div>
+
+        <a href="dashboard-empty.html" class="btn btn-primary btn-block" style="padding: 12px;">Create Employer Account</a>
+      </form>
+    </div>
+
+    <div class="text-center mt-lg">
+      <p class="text-muted">Already registered? <a href="login.html" class="font-semibold text-main">Sign in instead</a></p>
+      <p class="text-muted" style="margin-top: 24px; font-size: 0.875rem;">Are you an executive seeking jobs? <a href="signup-candidate.html" class="font-semibold text-main">Apply as Candidate</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

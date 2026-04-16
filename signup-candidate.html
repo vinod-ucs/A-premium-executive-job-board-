@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Registration - ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: var(--color-surface); padding-top: var(--space-xxl); padding-bottom: var(--space-xxl); }
+  </style>
+</head>
+<body>
+
+  <div class="container" style="max-width: 600px;">
+    
+    <div class="text-center mb-xl">
+      <a href="index.html" class="logo mb-md">ExecBoard MX</a>
+      <h1 style="font-size: 2rem;">Apply for the Executive Network</h1>
+      <p class="text-muted">Join LATAM's premier network of verified C-Level and VP professionals.</p>
+    </div>
+
+    <div class="card p-xl">
+      <h2 class="mb-lg" style="font-size: 1.25rem;">Candidate Information</h2>
+      
+      <form>
+        <div class="row">
+          <div class="col col-6 form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Maria">
+          </div>
+          <div class="col col-6 form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Sanchez">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Work Email / Primary Email</label>
+          <input type="email" class="form-control" placeholder="maria@example.com">
+        </div>
+
+        <div class="form-group mb-xl">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Min 8 characters">
+        </div>
+
+        <div class="hr mb-xl"></div>
+        <h2 class="mb-lg" style="font-size: 1.25rem;">Quick Vetting Details</h2>
+
+        <div class="form-group">
+          <label class="form-label">LinkedIn Profile URL</label>
+          <input type="url" class="form-control" placeholder="https://linkedin.com/in/...">
+        </div>
+
+        <div class="form-group mb-xl">
+          <label class="form-label">Current Role / Title</label>
+          <input type="text" class="form-control" placeholder="e.g. VP of Product">
+        </div>
+
+        <div class="p-md mb-xl" style="background-color: var(--color-bg); border: 1px dashed var(--color-border-dark); border-radius: var(--radius);">
+          <p class="font-semibold mb-sm text-center">Initial CV Upload (Optional but Recommended)</p>
+          <p class="text-muted text-center mb-md" style="font-size: 0.875rem;">Upload your current PDF resume to fast-track your approval.</p>
+          <button class="btn btn-secondary btn-block">Choose File</button>
+        </div>
+
+        <a href="profile-empty.html" class="btn btn-primary btn-block" style="padding: 12px;">Submit Application</a>
+      </form>
+    </div>
+
+    <div class="text-center mt-lg">
+      <p class="text-muted">Already a member? <a href="login.html" class="font-semibold text-main">Sign in instead</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

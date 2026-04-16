@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: var(--color-surface); display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="container" style="max-width: 500px;">
+    
+    <div class="text-center mb-xl">
+      <a href="index.html" class="logo mb-md">ExecBoard MX</a>
+      <h1 style="font-size: 2rem;">Welcome back</h1>
+      <p class="text-muted">Sign in to your account.</p>
+    </div>
+
+    <div class="card p-xl">
+      
+      <!-- Login Tabs -->
+      <div class="d-flex mb-xl" style="border-bottom: 2px solid var(--color-border);">
+        <div class="w-100 text-center py-sm font-semibold cursor-pointer" style="border-bottom: 2px solid var(--color-primary); color: var(--color-primary); margin-bottom: -2px;">Candidate</div>
+        <div class="w-100 text-center py-sm font-semibold text-muted cursor-pointer">Employer / Admin</div>
+      </div>
+
+      <form>
+        <div class="form-group mb-lg">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="you@example.com">
+        </div>
+        
+        <div class="form-group mb-lg">
+          <div class="d-flex justify-content-between align-items-center mb-sm">
+            <label class="form-label m-0">Password</label>
+            <a href="#" class="text-muted" style="font-size: 0.875rem;">Forgot password?</a>
+          </div>
+          <input type="password" class="form-control" placeholder="••••••••">
+        </div>
+
+        <a href="profile.html" class="btn btn-primary btn-block mt-xl" style="padding: 12px;">Sign In</a>
+        <!-- Note: Static wireframe routes candidate to profile.html. An employer would go to dashboard.html -->
+      </form>
+      
+    </div>
+
+    <div class="text-center mt-lg">
+      <p class="text-muted">Don't have an account? <br> <a href="signup-candidate.html" class="font-semibold text-main">Join as Candidate</a> or <a href="signup-company.html" class="font-semibold text-main">Register Company</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>

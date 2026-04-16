@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard (Empty) - ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <header class="header bg-white">
+    <div class="container" style="max-width: 100%;">
+      <div class="row align-items-center justify-content-between px-lg">
+        <div class="col col-3">
+          <a href="index.html" class="logo">ExecBoard MX <span class="text-muted"
+              style="font-size: 0.875rem; font-weight: normal; margin-left: 8px;">Employer Portal</span></a>
+        </div>
+        <div class="col col-3 d-flex justify-content-end align-items-center">
+          <span class="text-muted font-semibold mr-md">NewStartup MX</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="display: flex; min-height: calc(100vh - 73px);">
+
+    <!-- Sidebar Navigation -->
+    <div
+      style="width: 250px; border-right: 1px solid var(--color-border); background-color: var(--color-surface); padding: var(--space-xl) var(--space-lg);">
+      <nav class="d-flex flex-column gap-md">
+        <a href="dashboard.html" class="font-semibold" style="color: var(--color-primary);">Job Postings &
+          Applicants</a>
+        <a href="#" class="text-muted">Company Profile</a>
+        <a href="#" class="text-muted">Billing</a>
+        <a href="#" class="text-muted">Settings</a>
+      </nav>
+      <div class="mt-xxl">
+        <a href="post-job.html" class="btn btn-primary btn-block">Post New Role</a>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div style="flex: 1; padding: var(--space-xl); background-color: #FAFAFA;">
+      <div class="container" style="max-width: 1100px; margin: 0;">
+
+        <div class="d-flex justify-content-between align-items-center mb-xl">
+          <div>
+            <h1 class="mb-sm" style="font-size: 2rem;">Job Postings Overview</h1>
+            <p class="text-muted">Manage your premium job listings and review incoming candidates anonymously.</p>
+          </div>
+        </div>
+
+        <!-- Status Tabs -->
+        <div class="d-flex gap-lg mb-lg" style="border-bottom: 1px solid var(--color-border);">
+          <div class="font-semibold text-main pb-sm"
+            style="border-bottom: 2px solid var(--color-primary); cursor: pointer;">All Roles (0)</div>
+          <div class="text-muted pb-sm" style="cursor: pointer;">Active (0)</div>
+          <div class="text-muted pb-sm" style="cursor: pointer;">Pending (0)</div>
+          <div class="text-muted pb-sm" style="cursor: pointer;">Rejected (0)</div>
+        </div>
+
+        <!-- Empty State Jobs -->
+        <div class="card mb-xl d-flex flex-column justify-content-center align-items-center py-xxl"
+          style="border-style: dashed; background-color: #FFF;">
+          <div
+            style="width: 80px; height: 80px; background-color: var(--color-surface); border-radius: 50%; margin-bottom: var(--space-lg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border);">
+            <span style="font-size: 2rem; color: var(--color-text-muted);">📄</span>
+          </div>
+          <h2 class="mb-sm">No Active Job Postings</h2>
+          <p class="text-muted mb-lg text-center" style="max-width: 400px;">You haven't posted any executive positions
+            yet. Post a job to start sourcing vetted executives privately.</p>
+          <a href="post-job.html" class="btn btn-primary px-lg">Post Your First Role</a>
+        </div>
+
+        <!-- Empty State Applicants -->
+        <h2 class="mb-md">Recent Candidates</h2>
+        <div class="card p-xl text-center" style="background-color: var(--color-surface);">
+          <p class="text-muted m-0">Applicants will appear here securely and anonymously once your job listings are
+            active.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+</body>
+
+</html>
