@@ -1,94 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Contact Form</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .form-container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: #111827;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .success {
-      text-align: center;
-      color: green;
-      margin-top: 10px;
-      display: none;
-    }
-  </style>
+  <title>ExecBoard - Premium Executive Jobs Mexico</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="form-container">
-  <h2>Contact Me</h2>
-  <form id="contactForm">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="4"></textarea>
-    <button type="submit">Submit</button>
-  </form>
-  <div class="success" id="successMsg">Form submitted successfully!</div>
-</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col col-3">
+          <a href="index.html" class="logo">ExecBoard MX</a>
+        </div>
+        <div class="col col-6 d-flex justify-content-center">
+          <nav class="nav-links">
+            <a href="jobs.html">Search Jobs</a>
+            <a href="#">For Companies</a>
+            <a href="dashboard.html">Dashboard</a>
+          </nav>
+        </div>
+        <div class="col col-3 d-flex justify-content-end gap-md">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="signup-candidate.html" class="btn btn-primary">Join Network</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+  <!-- Hero Section -->
+  <section class="py-xxl">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col col-10 text-center">
+          <h1>Premium Executive Roles in Mexico,<br>Curated & Verified.</h1>
+          <p class="text-muted" style="font-size: 1.25rem;">A trusted network for C-level, VP, and Director-level
+            opportunities across Mexico. No noise, just carefully vetted positions from top companies.</p>
+        </div>
+      </div>
 
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+      <!-- Search Bar -->
+      <div class="row justify-content-center mt-xl">
+        <div class="col col-8">
+          <div class="search-bar">
+            <input type="text" class="form-control" style="border: none;" placeholder="Role (e.g. Director General)">
+            <div class="divider-vertical"></div>
+            <input type="text" class="form-control" style="border: none;" placeholder="Location (e.g. CDMX)">
+            <a href="jobs.html" class="btn btn-primary" style="padding: 12px 32px;">Search</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  await fetch("YOUR_WEB_APP_URL", {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
+  <!-- Trusted Companies -->
+  <section class="pb-xxl">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <p class="text-center text-muted mb-lg font-semibold"
+            style="text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Trusted by Top Companies in
+            LATAM</p>
+          <div class="logo-grid">
+            <div class="logo-placeholder"></div>
+            <div class="logo-placeholder"></div>
+            <div class="logo-placeholder"></div>
+            <div class="logo-placeholder"></div>
+            <div class="logo-placeholder"></div>
+            <div class="logo-placeholder"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  document.getElementById("successMsg").style.display = "block";
-  this.reset();
-});
-</script>
+  <!-- Featured Roles -->
+  <section class="py-xxl" style="background-color: var(--color-surface);">
+    <div class="container">
+      <div class="row mb-xl align-items-center justify-content-between">
+        <div class="col col-8">
+          <h2>Featured Executive Roles</h2>
+          <p>Hand-picked opportunities vetted by our team.</p>
+        </div>
+        <div class="col col-4 d-flex justify-content-end">
+          <a href="jobs.html" class="btn btn-secondary">View All Roles</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Job Card 1 -->
+        <div class="col col-4 d-flex">
+          <div class="card card-hover d-flex flex-column w-100">
+            <div class="mb-lg">
+              <span class="badge badge-default mb-md">Engineering</span>
+              <h3 style="font-size: 1.25rem;"><a href="job-detail.html">Chief Technology Officer</a></h3>
+              <p class="font-semibold" style="color: var(--color-text-main); margin-bottom: var(--space-sm);">FinTech
+                Global MX</p>
+              <p class="text-muted" style="font-size: 0.875rem;">Ciudad de México (CDMX) • Híbrido</p>
+            </div>
+            <div class="mt-auto pt-md"
+              style="border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+              <span class="font-semibold">$2.5M - $3M MXN</span>
+              <a href="job-detail.html" class="btn btn-secondary"
+                style="padding: 6px 12px; font-size: 0.875rem;">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="col col-4 d-flex">
+          <div class="card card-hover d-flex flex-column w-100">
+            <div class="mb-lg">
+              <span class="badge badge-default mb-md">Marketing</span>
+              <h3 style="font-size: 1.25rem;"><a href="job-detail.html">VP of Marketing</a></h3>
+              <p class="font-semibold" style="color: var(--color-text-main); margin-bottom: var(--space-sm);">SaludTech
+                Solutions</p>
+              <p class="text-muted" style="font-size: 0.875rem;">Monterrey, N.L. • Presencial</p>
+            </div>
+            <div class="mt-auto pt-md"
+              style="border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+              <span class="font-semibold">$2M - $2.4M MXN</span>
+              <a href="job-detail.html" class="btn btn-secondary"
+                style="padding: 6px 12px; font-size: 0.875rem;">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="col col-4 d-flex">
+          <div class="card card-hover d-flex flex-column w-100">
+            <div class="mb-lg">
+              <span class="badge badge-default mb-md">Operations</span>
+              <h3 style="font-size: 1.25rem;"><a href="job-detail.html">Chief Operating Officer</a></h3>
+              <p class="font-semibold" style="color: var(--color-text-main); margin-bottom: var(--space-sm);">Logistics
+                Prime LATAM</p>
+              <p class="text-muted" style="font-size: 0.875rem;">Guadalajara, Jal. • Remoto</p>
+            </div>
+            <div class="mt-auto pt-md"
+              style="border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+              <span class="font-semibold">$2.2M - $2.8M MXN</span>
+              <a href="job-detail.html" class="btn btn-secondary"
+                style="padding: 6px 12px; font-size: 0.875rem;">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-xxl">
+    <div class="container text-center">
+      <h2>Looking to hire executive talent in Mexico?</h2>
+      <p class="mb-lg">Our rigorous curation respects privacy. You see sanitized applications focusing purely on skills
+        and experience to eliminate bias and maintain executive confidentiality.</p>
+      <a href="signup-company.html" class="btn btn-primary">Post a Premium Job</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col col-3">
+          <div class="logo mb-md">ExecBoard MX</div>
+          <p class="text-muted">A premium, curated job board for executive and leadership roles in Mexico.</p>
+        </div>
+        <div class="col col-3">
+          <h4 class="mb-md">Candidates</h4>
+          <ul class="d-flex flex-column gap-sm" style="padding:0;">
+            <li><a href="jobs.html">Search Jobs</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+          </ul>
+        </div>
+        <div class="col col-3">
+          <h4 class="mb-md">Employers</h4>
+          <ul class="d-flex flex-column gap-sm" style="padding:0;">
+            <li><a href="post-job.html">Post a Job</a></li>
+            <li><a href="dashboard.html">Company Dashboard</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="col col-3">
+          <h4 class="mb-md">Admin</h4>
+          <ul class="d-flex flex-column gap-sm" style="padding:0;">
+            <li><a href="admin.html">Admin Panel</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
