@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile — ExecBoard MX</title>
+    <meta name="description" content="Manage your executive profile on ExecBoard MX.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--grey-50);">
+
+    <!-- Header: Logged In -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">ExecBoard MX</a>
+                <nav class="nav-links">
+                    <a href="Search-candidate.html" class="active">Search Roles</a>
+                    <a href="candidate-saved.html">Saved Roles <span class="badge badge-dark"
+                            style="margin-left: 4px;">2</span></a>
+                    <a href="candidate-chat.html">Messages <span class="badge badge-dark"
+                            style="margin-left: 4px; background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">1</span></a>
+                    <a href="candidate-support.html">Support</a>
+                </nav>
+                <div class="d-flex align-items-center gap-md">
+                    <a href="profile.html" class="font-medium text-muted"
+                        style="font-size: var(--font-size-sm);">Alejandra
+                        Vargas</a>
+                    <div class="avatar avatar-sm">AV</div>
+                    <a href="logout.html" class="btn btn-ghost btn-sm">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Bar -->
+    <div
+        style="background-color: var(--color-bg); border-bottom: 1px solid var(--color-border); padding: var(--space-xl) 0;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end">
+                <div>
+                    <h1 style="font-size: var(--font-size-4xl); margin-bottom: 4px;">Search Executive Roles</h1>
+                    <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Showing <strong
+                            style="color: var(--grey-800);">24</strong> hand-vetted opportunities across Mexico.</p>
+                </div>
+                <div class="d-flex align-items-center gap-sm">
+                    <span class="text-muted" style="font-size: var(--font-size-sm);">Sort by:</span>
+                    <select class="form-control"
+                        style="width: auto; font-size: var(--font-size-sm); padding: 8px 32px 8px 12px;">
+                        <option>Most Recent</option>
+                        <option>Salary: High to Low</option>
+                        <option>Salary: Low to High</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <main class="py-xl">
+        <div class="container">
+            <div class="row">
+
+                <!-- Sidebar Filters -->
+                <div class="col col-3">
+                    <div class="card sticky-top" style="padding: var(--space-lg);">
+                        <div class="d-flex justify-content-between align-items-center"
+                            style="padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-lg);">
+                            <h3 style="font-size: var(--font-size-base); margin-bottom: 0;">Filters</h3>
+                            <a href="#"
+                                style="font-size: var(--font-size-xs); color: var(--grey-500); text-decoration: underline;">Clear
+                                All</a>
+                        </div>
+
+                        <div class="d-flex flex-column gap-lg">
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Role / Title</label>
+                                <input type="text" class="form-control" placeholder="e.g. Director General"
+                                    style="font-size: var(--font-size-sm);">
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Location</label>
+                                <input type="text" class="form-control" placeholder="e.g. Monterrey"
+                                    style="font-size: var(--font-size-sm);">
+                            </div>
+
+                            <hr class="hr" style="margin: 0;">
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Management
+                                    Level</label>
+                                <div class="d-flex flex-column gap-sm mt-sm">
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox"> C-Level / Director General
+                                    </label>
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox" checked=""> VP / EVP / SVP
+                                    </label>
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox"> Director
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Work Mode</label>
+                                <div class="d-flex flex-column gap-sm mt-sm">
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox" checked=""> Remoto
+                                    </label>
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox" checked=""> Híbrido
+                                    </label>
+                                    <label class="d-flex align-items-center gap-sm cursor-pointer"
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-body);">
+                                        <input type="checkbox"> Presencial
+                                    </label>
+                                </div>
+                            </div>
+
+                            <hr class="hr" style="margin: 0;">
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Industry</label>
+                                <select class="form-control" style="font-size: var(--font-size-sm);">
+                                    <option value="">All Industries</option>
+                                    <option>Technology / FinTech</option>
+                                    <option>Healthcare &amp; Pharma</option>
+                                    <option>Finance &amp; Banking</option>
+                                    <option>Retail &amp; E-Commerce</option>
+                                    <option>Logistics</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Minimum Salary
+                                    (MXN/yr)</label>
+                                <select class="form-control" style="font-size: var(--font-size-sm);">
+                                    <option value="">Any</option>
+                                    <option>$1,500,000+</option>
+                                    <option selected="">$2,000,000+</option>
+                                    <option>$2,500,000+</option>
+                                    <option>$3,000,000+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label" style="font-size: var(--font-size-xs);">Years of
+                                    Experience</label>
+                                <select class="form-control" style="font-size: var(--font-size-sm);">
+                                    <option>Any</option>
+                                    <option>10+</option>
+                                    <option>12+</option>
+                                    <option selected="">15+</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary btn-block" type="button">Apply Filters</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Listings -->
+                <div class="col col-9">
+
+                    <!-- Job Card 1 -->
+                    <div class="card card-hover mb-lg" style="padding: var(--space-xl); height: auto;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div style="flex: 1; padding-right: var(--space-xl);">
+                                <div class="d-flex align-items-center gap-sm mb-md">
+                                    <span class="badge badge-dark">C-Level</span>
+                                    <span class="badge badge-default">Technology</span>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                <h2 style="font-size: var(--font-size-2xl); margin-bottom: 4px;">
+                                    <a href="job-detail.html" style="color: var(--grey-900);">Chief Technology
+                                        Officer</a>
+                                </h2>
+                                <p class="font-semibold text-main mb-md" style="font-size: var(--font-size-base);">
+                                    FinTech Global MX</p>
+                                <div class="d-flex flex-wrap gap-lg text-muted" style="font-size: var(--font-size-sm);">
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> Ciudad de México (Híbrido)
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> $2.5M – $3M MXN
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> 15+ Years Exp.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-md" style="min-width: 128px;">
+                                <span class="text-subtle" style="font-size: var(--font-size-xs);">Posted 2 days
+                                    ago</span>
+                                <a href="job-detail.html" class="btn btn-primary btn-block"
+                                    style="text-align: center;">Apply</a>
+                                <button class="btn btn-secondary btn-block btn-sm">Save Role</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="card card-hover mb-lg" style="padding: var(--space-xl); height: auto;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div style="flex: 1; padding-right: var(--space-xl);">
+                                <div class="d-flex align-items-center gap-sm mb-md">
+                                    <span class="badge badge-dark">VP / EVP</span>
+                                    <span class="badge badge-default">Marketing</span>
+                                </div>
+                                <h2 style="font-size: var(--font-size-2xl); margin-bottom: 4px;">
+                                    <a href="job-detail.html" style="color: var(--grey-900);">VP of Product
+                                        Marketing</a>
+                                </h2>
+                                <p class="font-semibold text-main mb-md" style="font-size: var(--font-size-base);">
+                                    SaludTech Solutions</p>
+                                <div class="d-flex flex-wrap gap-lg text-muted" style="font-size: var(--font-size-sm);">
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> Monterrey, N.L. (Remoto)
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> $2M – $2.4M MXN
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> 12+ Years Exp.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-md" style="min-width: 128px;">
+                                <span class="text-subtle" style="font-size: var(--font-size-xs);">Posted 4 days
+                                    ago</span>
+                                <a href="job-detail.html" class="btn btn-primary btn-block"
+                                    style="text-align: center;">Apply</a>
+                                <button class="btn btn-secondary btn-block btn-sm">Save Role</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="card card-hover mb-lg" style="padding: var(--space-xl); height: auto;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div style="flex: 1; padding-right: var(--space-xl);">
+                                <div class="d-flex align-items-center gap-sm mb-md">
+                                    <span class="badge badge-dark">Director</span>
+                                    <span class="badge badge-default">Operations</span>
+                                </div>
+                                <h2 style="font-size: var(--font-size-2xl); margin-bottom: 4px;">
+                                    <a href="job-detail.html" style="color: var(--grey-900);">Director of Operations</a>
+                                </h2>
+                                <p class="font-semibold text-main mb-md" style="font-size: var(--font-size-base);">
+                                    Logistics Prime LATAM</p>
+                                <div class="d-flex flex-wrap gap-lg text-muted" style="font-size: var(--font-size-sm);">
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> Guadalajara, Jal. (Presencial)
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> $2.2M – $2.6M MXN
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> 10+ Years Exp.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-md" style="min-width: 128px;">
+                                <span class="text-subtle" style="font-size: var(--font-size-xs);">Posted 1 week
+                                    ago</span>
+                                <a href="job-detail.html" class="btn btn-primary btn-block"
+                                    style="text-align: center;">Apply</a>
+                                <button class="btn btn-secondary btn-block btn-sm">Save Role</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 4 -->
+                    <div class="card card-hover mb-lg" style="padding: var(--space-xl); height: auto;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div style="flex: 1; padding-right: var(--space-xl);">
+                                <div class="d-flex align-items-center gap-sm mb-md">
+                                    <span class="badge badge-dark">C-Level</span>
+                                    <span class="badge badge-default">Finance</span>
+                                </div>
+                                <h2 style="font-size: var(--font-size-2xl); margin-bottom: 4px;">
+                                    <a href="job-detail.html" style="color: var(--grey-900);">Chief Financial
+                                        Officer</a>
+                                </h2>
+                                <p class="font-semibold text-main mb-md" style="font-size: var(--font-size-base);">
+                                    Banorte Digital</p>
+                                <div class="d-flex flex-wrap gap-lg text-muted" style="font-size: var(--font-size-sm);">
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> CDMX (Híbrido)
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> $3.5M – $4.5M MXN
+                                    </span>
+                                    <span class="d-flex align-items-center gap-sm">
+                                        <span class="icon-placeholder"></span> 18+ Years Exp.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-end gap-md" style="min-width: 128px;">
+                                <span class="text-subtle" style="font-size: var(--font-size-xs);">Posted 3 days
+                                    ago</span>
+                                <a href="job-detail.html" class="btn btn-primary btn-block"
+                                    style="text-align: center;">Apply</a>
+                                <button class="btn btn-secondary btn-block btn-sm">Save Role</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center align-items-center mt-xl"
+                        style="border-top: 1px solid var(--color-border); padding-top: var(--space-xl);">
+                        <div class="pagination">
+                            <button class="page-btn" disabled="">← Prev</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span class="text-subtle px-sm">…</span>
+                            <button class="page-btn">8</button>
+                            <button class="page-btn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col col-4">
+                    <a href="index.html" class="logo"
+                        style="display: inline-block; margin-bottom: var(--space-lg);">ExecBoard
+                        MX</a>
+                    <p>Mexico's premier executive job board.</p>
+                </div>
+                <div class="col col-2 offset-2">
+                    <h4>Candidates</h4>
+                    <ul class="d-flex flex-column gap-sm">
+                        <li><a href="jobs.html">Search Roles</a></li>
+                        <li><a href="profile.html">My Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col col-2">
+                    <h4>Employers</h4>
+                    <ul class="d-flex flex-column gap-sm">
+                        <li><a href="post-job.html">Post a Role</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col col-2">
+                    <h4>Platform</h4>
+                    <ul class="d-flex flex-column gap-sm">
+                        <li><a href="admin.html">Admin Panel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span>© 2025 ExecBoard MX.</span>
+                <span>Built for Mexico's Executive Market</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

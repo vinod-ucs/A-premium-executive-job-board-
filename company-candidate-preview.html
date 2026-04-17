@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Anonymous Preview — ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: var(--grey-50);">
+
+  <header class="header">
+    <div class="container" style="max-width: 100%; padding: 0 var(--space-xl);">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <a href="dashboard.html" class="btn btn-ghost btn-sm">← Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--space-xxl);">
+    <div class="container" style="max-width: 900px;">
+      
+      <div class="d-flex justify-content-between align-items-center mb-xl">
+        <a href="dashboard.html" class="btn btn-ghost btn-sm" style="padding-left:0;">&larr; Back to Candidates</a>
+        <div class="d-flex gap-sm">
+           <button class="btn btn-primary">Request Connection</button>
+           <button class="btn btn-secondary">Pass</button>
+        </div>
+      </div>
+
+      <div class="card mb-xl" style="padding: var(--space-xl);">
+        <div class="d-flex align-items-center gap-lg mb-xl">
+          <div class="avatar avatar-xl">C1</div>
+          <div>
+            <h1 style="font-size: var(--font-size-4xl); margin-bottom: 4px;">Candidate #8842</h1>
+            <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-lg);">VP of Engineering / CTO</p>
+            <div class="d-flex gap-sm"><span class="badge badge-success">Vetted</span><span class="badge badge-default">Confidential Profile</span></div>
+          </div>
+        </div>
+
+        <div class="notice-banner notice-banner-info mb-xl">
+           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+           <span><strong>Privacy Mode Active.</strong> Personal identifiable information (Name, Contact, Specific Employer Names) is hidden until you request a connection and the candidate accepts.</span>
+        </div>
+
+        <div class="row">
+          <div class="col col-8">
+            <h3 class="mb-lg">Professional Summary</h3>
+            <p class="text-body">15+ years of engineering leadership experience, including 5 years at a top LATAM technology unicorn. Specialized in scaling teams from 20 to 150+ engineers, implementing microservices architectures, and driving technical strategy for high-frequency payment systems.</p>
+            
+            <h3 class="mt-xl mb-lg">Experience Summary</h3>
+            <div class="mb-xl">
+               <div class="d-flex justify-content-between mb-xs">
+                 <h4 class="font-size-lg mb-0 text-main">VP of Engineering</h4>
+                 <span class="text-muted text-sm">2021 – Present</span>
+               </div>
+               <p class="text-muted text-xs mb-md">Major E-commerce Platform (Confidential)</p>
+               <ul class="text-sm d-flex flex-column gap-sm" style="list-style: disc; padding-left: 20px;">
+                  <li>Currently leading a decentralized team of 120+ engineers.</li>
+                  <li>Rebuilt legacy monolithic system into 40+ microservices.</li>
+                  <li>Managed $15M USD annual technology budget.</li>
+               </ul>
+            </div>
+          </div>
+          <div class="col col-4">
+             <div class="card card-surface" style="padding: var(--space-lg);">
+                <h4 class="text-xs uppercase mb-md">Technical Stack</h4>
+                <div class="d-flex flex-wrap gap-sm">
+                   <span class="badge badge-default">Go</span>
+                   <span class="badge badge-default">React</span>
+                   <span class="badge badge-default">Kubernetes</span>
+                   <span class="badge badge-default">AWS</span>
+                </div>
+                <hr class="hr my-lg">
+                <h4 class="text-xs uppercase mb-md">Education</h4>
+                <p class="text-sm font-medium mb-0">MS Computer Science</p>
+                <p class="text-xs text-muted">Top Mexican University</p>
+             </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

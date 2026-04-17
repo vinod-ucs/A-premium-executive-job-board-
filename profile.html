@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <meta name="description" content="Manage your executive profile on ExecBoard MX.">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body style="background-color: var(--grey-50);">
 
   <!-- Header: Logged In -->
@@ -15,12 +17,18 @@
       <div class="header-inner">
         <a href="index.html" class="logo">ExecBoard MX</a>
         <nav class="nav-links">
-          <a href="jobs.html">Search Roles</a>
-          <a href="#">Saved Roles <span class="badge badge-default" style="margin-left: 4px;">2</span></a>
+          <a href="Search-candidate.html">Search Roles</a>
+          <a href="candidate-saved.html" class="active">Saved Roles <span class="badge badge-dark"
+              style="margin-left: 4px;">2</span></a>
+          <a href="candidate-chat.html">Messages <span class="badge badge-dark"
+              style="margin-left: 4px; background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">1</span></a>
+          <a href="candidate-support.html">Support</a>
         </nav>
         <div class="d-flex align-items-center gap-md">
-          <span class="font-medium text-muted" style="font-size: var(--font-size-sm);">Alejandra Vargas</span>
+          <a href="profile.html" class="font-medium text-muted" style="font-size: var(--font-size-sm);">Alejandra
+            Vargas</a>
           <div class="avatar avatar-sm">AV</div>
+          <a href="logout.html" class="btn btn-ghost btn-sm">Log Out</a>
         </div>
       </div>
     </div>
@@ -36,8 +44,10 @@
             <div class="avatar avatar-xl" style="font-size: var(--font-size-3xl); font-weight: 800;">AV</div>
             <div>
               <h1 style="font-size: var(--font-size-4xl); margin-bottom: 4px;">Alejandra Vargas</h1>
-              <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-lg);">Chief Operating Officer</p>
-              <p class="text-muted mb-sm" style="font-size: var(--font-size-sm);">CDMX, Mexico &nbsp;·&nbsp; Open to Remote LATAM</p>
+              <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-lg);">Chief Operating Officer
+              </p>
+              <p class="text-muted mb-sm" style="font-size: var(--font-size-sm);">CDMX, Mexico &nbsp;·&nbsp; Open to
+                Remote LATAM</p>
               <div class="d-flex align-items-center gap-sm flex-wrap">
                 <span class="badge badge-success">Open to Offers</span>
                 <span class="badge badge-default">Candidate #8842</span>
@@ -51,8 +61,13 @@
 
         <!-- Privacy Notice -->
         <div class="notice-banner notice-banner-warning mt-lg">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span style="font-size: var(--font-size-sm);"><strong>Privacy Mode Active.</strong> Employers only see your anonymous executive summary, skills, and anonymized experience. Your name, current employer, and contact details are hidden until you accept a connection request.</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <span style="font-size: var(--font-size-sm);"><strong>Privacy Mode Active.</strong> Employers only see your
+            anonymous executive summary, skills, and anonymized experience. Your name, current employer, and contact
+            details are hidden until you accept a connection request.</span>
         </div>
       </div>
 
@@ -67,7 +82,10 @@
               <h3 style="margin-bottom: 0;">Executive Summary</h3>
               <button class="btn btn-ghost btn-sm">Edit</button>
             </div>
-            <p>15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit economics, and leading international expansion. Passionate about operational excellence and data-driven decision making.</p>
+            <p>15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM
+              from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit
+              economics, and leading international expansion. Passionate about operational excellence and data-driven
+              decision making.</p>
           </div>
 
           <!-- Professional Experience -->
@@ -83,9 +101,12 @@
                   <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">Chief Operating Officer</h4>
                   <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">AeroSystems MX</p>
                 </div>
-                <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2021 – Present</span>
+                <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2021 –
+                  Present</span>
               </div>
-              <p style="font-size: var(--font-size-sm);">Led global hardware manufacturing and supply chain logistics operations. Reduced supply chain latency by 20% while scaling production volume 3× across 4 international facilities in Mexico and Brazil.</p>
+              <p style="font-size: var(--font-size-sm);">Led global hardware manufacturing and supply chain logistics
+                operations. Reduced supply chain latency by 20% while scaling production volume 3× across 4
+                international facilities in Mexico and Brazil.</p>
             </div>
 
             <hr class="hr">
@@ -94,11 +115,14 @@
               <div class="d-flex justify-content-between align-items-start mb-xs">
                 <div>
                   <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">VP of Operations</h4>
-                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">CloudScale Networks LATAM</p>
+                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">CloudScale Networks
+                    LATAM</p>
                 </div>
                 <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2017 – 2021</span>
               </div>
-              <p style="font-size: var(--font-size-sm);">Managed a team of 40+ operational staff spanning HR, Finance, and Legal across CDMX and Monterrey. Directed post-merger integration of two acquired startups, consolidating operational workflows efficiently.</p>
+              <p style="font-size: var(--font-size-sm);">Managed a team of 40+ operational staff spanning HR, Finance,
+                and Legal across CDMX and Monterrey. Directed post-merger integration of two acquired startups,
+                consolidating operational workflows efficiently.</p>
             </div>
 
             <hr class="hr">
@@ -107,11 +131,13 @@
               <div class="d-flex justify-content-between align-items-start mb-xs">
                 <div>
                   <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">Director of Strategy</h4>
-                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">Grupo Financiero Alpha</p>
+                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">Grupo Financiero Alpha
+                  </p>
                 </div>
                 <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2013 – 2017</span>
               </div>
-              <p style="font-size: var(--font-size-sm);">Drove corporate strategy across 6 business units with combined revenues of $4B MXN. Led implementation of OKR frameworks adopted company-wide.</p>
+              <p style="font-size: var(--font-size-sm);">Drove corporate strategy across 6 business units with combined
+                revenues of $4B MXN. Led implementation of OKR frameworks adopted company-wide.</p>
             </div>
           </div>
 
@@ -140,9 +166,11 @@
           <!-- Resume / CV -->
           <div class="card mb-lg">
             <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-sm);">Resume / CV</h4>
-            <p class="text-muted mb-md" style="font-size: var(--font-size-xs);">Your CV is automatically scrubbed of PII (Personally Identifiable Information) before being shared with employers to prevent bias.</p>
+            <p class="text-muted mb-md" style="font-size: var(--font-size-xs);">Your CV is automatically scrubbed of PII
+              (Personally Identifiable Information) before being shared with employers to prevent bias.</p>
             <div class="file-upload-zone" style="padding: var(--space-md);">
-              <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">A_Vargas_Executive_CV.pdf</p>
+              <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">A_Vargas_Executive_CV.pdf
+              </p>
               <p class="text-subtle mb-sm" style="font-size: var(--font-size-xs);">Updated 2 weeks ago</p>
               <button class="btn btn-secondary btn-block btn-sm">Update File</button>
             </div>
@@ -186,7 +214,8 @@
     <div class="container">
       <div class="row">
         <div class="col col-4">
-          <a href="index.html" class="logo" style="display: inline-block; margin-bottom: var(--space-lg);">ExecBoard MX</a>
+          <a href="index.html" class="logo" style="display: inline-block; margin-bottom: var(--space-lg);">ExecBoard
+            MX</a>
           <p>Mexico's premier executive job board.</p>
         </div>
         <div class="col col-2 offset-2">
@@ -219,4 +248,5 @@
   </footer>
 
 </body>
+
 </html>

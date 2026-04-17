@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Profile — Admin Curation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--grey-50);">
+
+  <header class="admin-header">
+    <div class="admin-logo">ExecBoard MX Admin</div>
+    <div class="d-flex align-items-center gap-md">
+      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System
+        Normal</span>
+      <span style="font-size: var(--font-size-xs); color: var(--grey-400);">SuperAdmin (ID: 01)</span>
+      <button class="btn btn-ghost btn-sm"
+        style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar admin-sidebar border-right" style="background-color: var(--grey-50);">
+      <p class="sidebar-section-label" style="margin-top:0;">Curation</p>
+      <nav class="sidebar-nav mb-xl">
+        <a href="admin.html" class="sidebar-link">Pending Jobs</a>
+        <a href="admin-approved-jobs.html" class="sidebar-link">Approved Jobs</a>
+        <a href="admin-rejected-queue.html" class="sidebar-link">Rejected Queue</a>
+      </nav>
+      <p class="sidebar-section-label">Directory</p>
+      <nav class="sidebar-nav">
+        <a href="admin-companies.html" class="sidebar-link">Companies</a>
+        <a href="admin-candidates.html" class="sidebar-link active">Candidates</a>
+        <a href="admin-support.html" class="sidebar-link">Support Tickets</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="container" style="max-width: 900px; padding: 0;">
+        <div class="d-flex justify-content-between align-items-center mb-xl">
+          <a href="admin-candidates.html" class="btn btn-ghost btn-sm" style="padding-left: 0;">&larr; Back to
+            Candidates</a>
+          <div class="d-flex gap-sm">
+            <button class="btn btn-secondary">Message</button>
+            <button class="btn btn-reject">Suspend Account</button>
+          </div>
+        </div>
+
+        <div class="card mb-lg" style="padding: var(--space-xl);">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex gap-lg align-items-center">
+              <div class="avatar avatar-xl" style="font-size: var(--font-size-3xl); font-weight: 800;">AV</div>
+              <div>
+                <h1 style="font-size: var(--font-size-4xl); margin-bottom: 4px;">Alejandra Vargas</h1>
+                <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-lg);">Chief Operating Officer
+                </p>
+                <div class="d-flex gap-sm align-items-center">
+                  <span class="badge badge-success">Approved</span>
+                  <span class="text-xs text-muted">ID: #8842</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <button class="btn btn-secondary btn-sm mb-xs">LinkedIn Linked ✓</button>
+              <p class="text-xs text-subtle">Joined Mar 01, 2025</p>
+            </div>
+          </div>
+
+          <hr class="hr my-lg" style="margin: var(--space-lg) 0;">
+
+          <h3 class="font-size-xl mb-md">Executive Summary</h3>
+          <p class="text-sm">15+ years of operational leadership scaling technology orgs across Mexico & LATAM from
+            Series B through IPO. Specialized in cross-functional org building, unit economics optimization, and
+            international expansion.</p>
+
+          <div class="row mt-lg">
+            <div class="col col-6">
+              <h4 class="font-size-base mb-xs">Core Competencies</h4>
+              <div class="d-flex flex-wrap gap-sm">
+                <span class="badge badge-default">P&L Management</span>
+                <span class="badge badge-default">Supply Chain</span>
+                <span class="badge badge-default">Org Design</span>
+              </div>
+            </div>
+            <div class="col col-6">
+              <h4 class="font-size-base mb-xs">Platform Activity</h4>
+              <p class="text-sm text-body mb-0">Applications: <strong>4</strong></p>
+              <p class="text-sm text-body mb-0">Invites Received: <strong>2</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

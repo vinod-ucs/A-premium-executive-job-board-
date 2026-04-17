@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Company Directory — Admin — ExecBoard MX</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <header class="admin-header">
     <div class="admin-logo">ExecBoard MX Admin</div>
     <div class="d-flex align-items-center gap-md">
-      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System Normal</span>
+      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System
+        Normal</span>
       <span style="font-size: var(--font-size-xs); color: var(--grey-400);">SuperAdmin (ID: 01)</span>
-      <button class="btn btn-ghost btn-sm" style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
+      <button class="btn btn-ghost btn-sm"
+        style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
     </div>
   </header>
 
@@ -21,15 +25,22 @@
     <aside class="admin-sidebar">
       <p class="sidebar-section-label" style="margin-top: 0;">Curation Queue</p>
       <nav class="sidebar-nav mb-xl">
-        <a href="admin.html" class="sidebar-link">Pending Jobs <span class="badge badge-warning" style="margin-left: auto;">12</span></a>
-        <a href="#" class="sidebar-link">Approved Jobs</a>
-        <a href="#" class="sidebar-link">Rejected Queue</a>
+        <a href="admin.html" class="sidebar-link">
+          Pending Jobs
+          <span class="badge badge-warning" style="margin-left: auto;">12</span>
+        </a>
+        <a href="admin-approved-jobs.html" class="sidebar-link">Approved Jobs</a>
+        <a href="admin-rejected-queue.html" class="sidebar-link">Rejected Queue</a>
       </nav>
+
       <p class="sidebar-section-label">Directory</p>
       <nav class="sidebar-nav">
         <a href="admin-companies.html" class="sidebar-link active">Companies</a>
         <a href="admin-candidates.html" class="sidebar-link">Candidates</a>
-        <a href="#" class="sidebar-link">Support Tickets <span class="badge badge-danger" style="margin-left: auto;">3</span></a>
+        <a href="admin-support.html" class="sidebar-link">
+          Support Tickets
+          <span class="badge badge-danger" style="margin-left: auto;">3</span>
+        </a>
       </nav>
     </aside>
 
@@ -37,10 +48,12 @@
       <div class="d-flex justify-content-between align-items-start mb-xl">
         <div>
           <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Company Directory</h1>
-          <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">All registered employer companies. Manage their status and posted roles.</p>
+          <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">All registered employer companies. Manage
+            their status and posted roles.</p>
         </div>
         <div class="search-bar" style="width: 280px; border-radius: var(--radius);">
-          <input type="text" class="form-control" placeholder="Search company…" style="padding: 9px 14px; font-size: var(--font-size-sm);">
+          <input type="text" class="form-control" placeholder="Search company…"
+            style="padding: 9px 14px; font-size: var(--font-size-sm);">
         </div>
       </div>
 
@@ -80,7 +93,7 @@
               <td class="text-muted" style="font-size: var(--font-size-sm);">Mar 12, 2025</td>
               <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary btn-sm">View</button>
+                  <a href="admin-company-detail.html" class="btn btn-secondary btn-sm">View</a>
                   <button class="btn btn-reject btn-sm">Suspend</button>
                 </div>
               </td>
@@ -101,7 +114,7 @@
               <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 17, 2025</td>
               <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary btn-sm">View</button>
+                  <a href="admin-company-detail.html" class="btn btn-secondary btn-sm">View</a>
                   <button class="btn btn-approve btn-sm">Approve</button>
                   <button class="btn btn-reject btn-sm">Reject</button>
                 </div>
@@ -123,7 +136,7 @@
               <td class="text-muted" style="font-size: var(--font-size-sm);">Feb 28, 2025</td>
               <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary btn-sm">View</button>
+                  <a href="admin-company-detail.html" class="btn btn-secondary btn-sm">View</a>
                   <button class="btn btn-reject btn-sm">Suspend</button>
                 </div>
               </td>
@@ -144,7 +157,7 @@
               <td class="text-muted" style="font-size: var(--font-size-sm);">Jan 5, 2025</td>
               <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary btn-sm">View</button>
+                  <a href="admin-company-detail.html" class="btn btn-secondary btn-sm">View</a>
                   <button class="btn btn-approve btn-sm">Reinstate</button>
                 </div>
               </td>
@@ -156,4 +169,5 @@
   </div>
 
 </body>
+
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Detail — Admin Curation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--grey-50);">
+
+  <header class="admin-header">
+    <div class="admin-logo">ExecBoard MX Admin</div>
+    <div class="d-flex align-items-center gap-md">
+      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System
+        Normal</span>
+      <span style="font-size: var(--font-size-xs); color: var(--grey-400);">SuperAdmin (ID: 01)</span>
+      <button class="btn btn-ghost btn-sm"
+        style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar admin-sidebar border-right" style="background-color: var(--grey-50);">
+      <p class="sidebar-section-label" style="margin-top:0;">Curation</p>
+      <nav class="sidebar-nav mb-xl">
+        <a href="admin.html" class="sidebar-link">Pending Jobs</a>
+        <a href="admin-approved-jobs.html" class="sidebar-link active">Approved Jobs</a>
+        <a href="admin-rejected-queue.html" class="sidebar-link">Rejected Queue</a>
+      </nav>
+      <p class="sidebar-section-label">Directory</p>
+      <nav class="sidebar-nav">
+        <a href="admin-companies.html" class="sidebar-link">Companies</a>
+        <a href="admin-candidates.html" class="sidebar-link">Candidates</a>
+        <a href="admin-support.html" class="sidebar-link">Support Tickets</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="container" style="max-width: 900px; padding: 0;">
+        <div class="d-flex justify-content-between align-items-center mb-xl">
+          <a href="admin-approved-jobs.html" class="btn btn-ghost btn-sm" style="padding-left: 0;">&larr; Back to
+            List</a>
+          <div class="d-flex gap-sm">
+            <button class="btn btn-secondary">Request Revision</button>
+            <button class="btn btn-reject">Revoke Job</button>
+          </div>
+        </div>
+
+        <!-- Job Header Overview -->
+        <div class="card mb-lg" style="padding: var(--space-xl);">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <div class="d-flex align-items-center gap-sm mb-md">
+                <span class="badge badge-success">Approved</span>
+                <span class="badge badge-default">Finance</span>
+                <span class="text-subtle ml-sm" style="font-size: var(--font-size-xs);">Ref: EB-8994</span>
+              </div>
+              <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Vice President of Finance</h1>
+              <p class="font-medium text-main" style="font-size: var(--font-size-base);"><a
+                  href="admin-company-detail.html" style="text-decoration: underline;">Acme Corp México</a></p>
+            </div>
+            <div class="text-right">
+              <div class="section-label mb-xs">Compliance</div>
+              <span class="badge badge-success">Checks Passed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-lg">
+          <h3 class="font-size-xl mb-md">Original Posting Details</h3>
+          <div class="row mb-md">
+            <div class="col col-3">
+              <p class="text-xs text-muted mb-0">Location</p>
+              <p class="text-sm font-medium">CDMX</p>
+            </div>
+            <div class="col col-3">
+              <p class="text-xs text-muted mb-0">Level</p>
+              <p class="text-sm font-medium">VP / EVP</p>
+            </div>
+            <div class="col col-3">
+              <p class="text-xs text-muted mb-0">Salary Range</p>
+              <p class="text-sm font-medium">$2.2M – $2.8M</p>
+            </div>
+            <div class="col col-3">
+              <p class="text-xs text-muted mb-0">Applicants</p>
+              <p class="text-sm font-medium">7</p>
+            </div>
+          </div>
+          <hr class="hr mb-md">
+          <h4 class="font-size-base mb-xs">Description Context</h4>
+          <p class="text-sm text-body">We are seeking an experienced Vice President of Finance to lead our financial
+            operations and strategy in Mexico. The ideal candidate will have a strong background in FinTech compliance,
+            reporting, and corporate finance.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

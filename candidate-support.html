@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--grey-50);">
+
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <nav class="nav-links">
+          <a href="Search-candidate.html">Search Roles</a>
+          <a href="candidate-saved.html">Saved Roles <span class="badge badge-dark"
+              style="margin-left: 4px;">2</span></a>
+          <a href="candidate-chat.html">Messages <span class="badge badge-dark"
+              style="margin-left: 4px; background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">1</span></a>
+          <a href="candidate-support.html" class="active">Support</a>
+        </nav>
+        <div class="d-flex align-items-center gap-md">
+          <a href="profile.html" class="font-medium text-muted" style="font-size: var(--font-size-sm);">Alejandra
+            Vargas</a>
+          <div class="avatar avatar-sm">AV</div>
+          <a href="logout.html" class="btn btn-ghost btn-sm">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: var(--space-xxl) 0;">
+    <div class="container" style="max-width: 840px;">
+
+      <div class="mb-xl text-center">
+        <h1 style="font-size: var(--font-size-3xl); margin-bottom: 8px;">How can we help?</h1>
+        <p class="text-muted mb-0">Get support from the ExecBoard MX team or browse common answers below.</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="row">
+        <div class="col col-7">
+          <div class="card mb-lg" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-lg);">Send a Support Request</h3>
+            <form>
+              <div class="form-group">
+                <label class="form-label">Topic</label>
+                <select class="form-control">
+                  <option value="">Select a topic</option>
+                  <option>Profile & Account</option>
+                  <option>Application Status</option>
+                  <option>Privacy Concern</option>
+                  <option>Technical Issue</option>
+                  <option>Company Message / Chat</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Subject</label>
+                <input type="text" class="form-control" placeholder="Brief description of your issue">
+              </div>
+              <div class="form-group mb-xl">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="6" placeholder="Describe your issue in detail…"
+                  style="resize: vertical;"></textarea>
+                <span class="form-hint">Typical response time: 4 hours during business hours (Mon–Fri, 9am–6pm
+                  CDMX).</span>
+              </div>
+              <button type="button" class="btn btn-primary">Submit Ticket</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Quick Help Sidebar -->
+        <div class="col col-5">
+          <div class="card mb-lg">
+            <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-lg);">Frequently Asked Questions
+            </h4>
+            <div class="d-flex flex-column gap-lg">
+
+              <div>
+                <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">When will my profile be
+                  approved?</p>
+                <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">Most profiles are reviewed within
+                  24–48 hours after submission. You'll receive an email notification.</p>
+              </div>
+              <hr class="hr" style="margin: 0;">
+
+              <div>
+                <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">Can employers see my
+                  name or current company?</p>
+                <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">No. All identifying information is
+                  hidden until you accept a connection request from a specific employer.</p>
+              </div>
+              <hr class="hr" style="margin: 0;">
+
+              <div>
+                <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">How do I apply for a
+                  role?</p>
+                <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">Browse Search Roles, click Apply
+                  Confidentially, and your anonymous profile will be forwarded to the employer.</p>
+              </div>
+              <hr class="hr" style="margin: 0;">
+
+              <div>
+                <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">Is ExecBoard MX free
+                  for candidates?</p>
+                <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">Yes. ExecBoard MX is completely free
+                  for executive candidates. Employers pay per posting.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- My Tickets -->
+          <div class="card">
+            <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-lg);">My Open Tickets</h4>
+            <div class="d-flex flex-column gap-sm">
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <div>
+                  <div class="font-medium text-main" style="font-size: var(--font-size-sm);">Profile not visible to
+                    employers</div>
+                  <div class="text-subtle" style="font-size: var(--font-size-xs);">TK-0081 · 3 days ago</div>
+                </div>
+                <span class="badge badge-success">Resolved</span>
+              </div>
+            </div>
+            <p class="text-subtle mt-md mb-0" style="font-size: var(--font-size-xs);">No other open tickets.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 ExecBoard MX.</span>
+        <span>Built for Mexico's Executive Market</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

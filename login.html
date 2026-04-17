@@ -16,31 +16,29 @@
       justify-content: center;
       padding: var(--space-xl) var(--space-md);
     }
-    .auth-header {
-      text-align: center;
-      margin-bottom: var(--space-xl);
-    }
     .auth-card {
       background: var(--color-bg);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       padding: var(--space-xl);
       width: 100%;
-      max-width: 440px;
+      max-width: 460px;
       box-shadow: var(--shadow-lg);
     }
-    .auth-tabs {
+    /* Role selector tabs */
+    .role-tabs {
       display: flex;
+      gap: 0;
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       overflow: hidden;
       margin-bottom: var(--space-xl);
     }
-    .auth-tab {
+    .role-tab {
       flex: 1;
-      padding: 10px;
+      padding: 10px 6px;
       text-align: center;
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-xs);
       font-weight: 500;
       color: var(--color-text-muted);
       cursor: pointer;
@@ -48,20 +46,33 @@
       background: transparent;
       border: none;
       font-family: var(--font-family);
+      border-right: 1px solid var(--color-border);
+      line-height: 1.3;
     }
-    .auth-tab.active {
+    .role-tab:last-child { border-right: none; }
+    .role-tab.active {
       background-color: var(--grey-900);
       color: var(--grey-0);
       font-weight: 600;
     }
-    .auth-divider {
+    .role-tab .role-icon {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    /* Sign-in destination hint */
+    .destination-hint {
       display: flex;
       align-items: center;
-      gap: var(--space-md);
-      margin: var(--space-lg) 0;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      background-color: var(--grey-100);
+      border-radius: var(--radius);
+      margin-bottom: var(--space-lg);
+      font-size: var(--font-size-xs);
+      color: var(--grey-500);
     }
-    .auth-divider-line { flex: 1; height: 1px; background-color: var(--color-border); }
-    .auth-divider-text { font-size: var(--font-size-xs); color: var(--color-text-subtle); font-weight: 500; }
+    .destination-hint strong { color: var(--grey-700); }
   </style>
 </head>
 <body>
@@ -71,35 +82,51 @@
   </div>
 
   <div class="auth-card">
-    <div class="auth-header" style="margin-bottom: var(--space-lg);">
+    <div style="text-align: center; margin-bottom: var(--space-lg);">
       <h1 style="font-size: var(--font-size-3xl); margin-bottom: 6px;">Welcome back</h1>
-      <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Sign in to your executive account</p>
+      <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Select your role and sign in</p>
     </div>
 
-    <!-- Role Tabs -->
-    <div class="auth-tabs">
-      <button class="auth-tab active" id="tab-candidate">Candidate</button>
-      <button class="auth-tab" id="tab-employer">Employer / Company</button>
+    <!-- 3-Role Tabs -->
+    <div class="role-tabs">
+      <button class="role-tab active" id="tab-candidate" onclick="selectRole('candidate')">
+        <span class="role-icon">👤</span>
+        Candidate
+      </button>
+      <button class="role-tab" id="tab-company" onclick="selectRole('company')">
+        <span class="role-icon">🏢</span>
+        Company
+      </button>
+      <button class="role-tab" id="tab-admin" onclick="selectRole('admin')">
+        <span class="role-icon">⚙️</span>
+        Admin
+      </button>
     </div>
 
-    <form>
+    <!-- Destination hint -->
+    <div class="destination-hint" id="destination-hint">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      <span>Signing in as <strong>Candidate</strong> — redirects to your executive profile</span>
+    </div>
+
+    <form id="login-form">
       <div class="form-group">
         <label class="form-label" for="login-email">Email Address</label>
         <input type="email" id="login-email" class="form-control" placeholder="you@company.com">
       </div>
 
       <div class="form-group mb-xl">
-        <div class="d-flex justify-content-between align-items-center mb-sm" style="margin-bottom: 6px;">
+        <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 6px;">
           <label class="form-label mb-0" for="login-password">Password</label>
           <a href="#" class="text-muted" style="font-size: var(--font-size-xs);">Forgot password?</a>
         </div>
         <input type="password" id="login-password" class="form-control" placeholder="••••••••">
       </div>
 
-      <a href="profile.html" class="btn btn-primary btn-block btn-lg" style="text-align: center;">
+      <!-- Dynamic sign-in button — href changes with role tab -->
+      <a href="profile.html" id="signin-btn" class="btn btn-primary btn-block btn-lg" style="text-align: center;">
         Sign In
       </a>
-      <!-- Static wireframe: candidates go to profile.html, employers to dashboard.html -->
     </form>
   </div>
 
@@ -109,6 +136,45 @@
     &nbsp;or&nbsp;
     <a href="signup-company.html" class="font-semibold text-main">Register Company</a>
   </p>
+
+  <script>
+    const roleConfig = {
+      candidate: {
+        label: 'Candidate',
+        hint: 'Signing in as <strong>Candidate</strong> — redirects to your executive profile',
+        destination: 'profile.html'
+      },
+      company: {
+        label: 'Company',
+        hint: 'Signing in as <strong>Company / Employer</strong> — redirects to your hiring dashboard',
+        destination: 'dashboard.html'
+      },
+      admin: {
+        label: 'Admin',
+        hint: 'Signing in as <strong>Admin</strong> — redirects to the curation control panel',
+        destination: 'admin.html'
+      }
+    };
+
+    function selectRole(role) {
+      // Update tabs
+      document.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + role).classList.add('active');
+
+      // Update hint
+      const config = roleConfig[role];
+      document.getElementById('destination-hint').innerHTML = `
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        <span>${config.hint}</span>
+      `;
+
+      // Update sign-in button destination
+      document.getElementById('signin-btn').href = config.destination;
+    }
+
+    // tab-admin -> tab-admin (align id with function)
+    document.getElementById('tab-admin').id = 'tab-admin';
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages & Connection Requests — ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .chat-layout {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    .chat-sidebar {
+      width: 320px;
+      border-right: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .chat-sidebar-header {
+      padding: var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .convo-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .convo-item:hover {
+      background-color: var(--grey-50);
+    }
+
+    .convo-item.active {
+      background-color: var(--grey-100);
+    }
+
+    .chat-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: var(--space-md) var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      background-color: var(--grey-50);
+    }
+
+    .chat-input-bar {
+      padding: var(--space-md) var(--space-xl);
+      border-top: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      gap: var(--space-sm);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <nav class="nav-links">
+          <a href="Search-candidate.html">Search Roles</a>
+          <a href="candidate-saved.html">Saved Roles <span class="badge badge-dark"
+              style="margin-left: 4px;">2</span></a>
+          <a href="candidate-chat.html" class="active">Messages <span class="badge badge-dark"
+              style="margin-left: 4px; background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">1</span></a>
+          <a href="candidate-support.html">Support</a>
+        </nav>
+        <div class="d-flex align-items-center gap-md">
+          <a href="profile.html" class="font-medium text-muted" style="font-size: var(--font-size-sm);">Alejandra
+            Vargas</a>
+          <div class="avatar avatar-sm">AV</div>
+          <a href="logout.html" class="btn btn-ghost btn-sm">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="chat-layout">
+
+    <!-- Sidebar: Invitations + Messages -->
+    <div class="chat-sidebar">
+      <div class="chat-sidebar-header">
+        <h3 style="font-size: var(--font-size-base); margin-bottom: 2px;">Messages</h3>
+        <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">Connection requests & active conversations
+        </p>
+      </div>
+
+      <!-- PENDING INVITATION — highlighted -->
+      <div class="convo-item active" style="background-color: #fafafa; border-left: 3px solid var(--grey-900);">
+        <div class="avatar avatar-sm" style="flex-shrink: 0; border-radius: var(--radius);">FG</div>
+        <div style="flex: 1; min-width: 0;">
+          <div class="d-flex justify-content-between align-items-baseline">
+            <span class="font-semibold text-main" style="font-size: var(--font-size-sm);">FinTech Global MX</span>
+            <span style="font-size: 10px; color: var(--grey-400);">Now</span>
+          </div>
+          <div style="font-size: var(--font-size-xs); margin-bottom: 2px;">
+            <span class="badge badge-dark" style="font-size: 9px; padding: 1px 6px;">New Invite</span>
+          </div>
+          <div class="text-muted"
+            style="font-size: var(--font-size-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            Connection request — CTO Role #EB-8921</div>
+        </div>
+      </div>
+
+      <!-- Existing conversation -->
+      <div class="convo-item">
+        <div class="avatar avatar-sm" style="flex-shrink: 0; border-radius: var(--radius);">AC</div>
+        <div style="flex: 1; min-width: 0;">
+          <div class="d-flex justify-content-between align-items-baseline">
+            <span class="font-semibold text-main" style="font-size: var(--font-size-sm);">Acme Corp MX</span>
+            <span style="font-size: 10px; color: var(--grey-400);">2 days ago</span>
+          </div>
+          <div class="text-muted"
+            style="font-size: var(--font-size-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">We
+            reviewed your profile and are very interested…</div>
+          <div class="text-subtle mt-xs" style="font-size: 10px;">Director of Product · EB-8902</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Main: Connection Invite View -->
+    <div class="chat-main">
+
+      <!-- Invite Header -->
+      <div class="chat-header" style="flex-wrap: wrap; gap: var(--space-sm);">
+        <div class="avatar avatar-sm" style="border-radius: var(--radius);">FG</div>
+        <div style="flex: 1;">
+          <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">FinTech Global MX <span
+              class="badge badge-dark" style="margin-left: 6px; font-size: 9px;">Connection Invite</span></div>
+          <div class="text-muted" style="font-size: var(--font-size-xs);">Regarding: Chief Technology Officer
+            &nbsp;·&nbsp; EB-8921</div>
+        </div>
+      </div>
+
+      <!-- Invite Card in Messages Area -->
+      <div class="chat-messages">
+
+        <!-- System Notice -->
+        <div class="text-center">
+          <span
+            style="font-size: 10px; color: var(--grey-400); background: var(--grey-150); padding: 4px 12px; border-radius: 99px;">
+            New Connection Request — Apr 17, 2025
+          </span>
+        </div>
+
+        <!-- Invite Card -->
+        <div class="card" style="padding: var(--space-xl); max-width: 560px; margin: 0 auto;">
+          <div class="d-flex align-items-center gap-md mb-lg">
+            <div class="avatar avatar-md" style="border-radius: var(--radius-lg);">FG</div>
+            <div>
+              <h3 style="font-size: var(--font-size-xl); margin-bottom: 2px;">FinTech Global MX</h3>
+              <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">Technology · 1,000–5,000 employees ·
+                CDMX</p>
+            </div>
+          </div>
+
+          <div class="notice-banner notice-banner-info mb-lg">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="flex-shrink:0;">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span style="font-size: var(--font-size-xs);"><strong>Accepting this request reveals your identity.</strong>
+              Your full name, current employer, and LinkedIn profile will be shared with this company.</span>
+          </div>
+
+          <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-sm);">Message from Employer:</p>
+          <div class="card-surface mb-lg" style="padding: var(--space-md);">
+            <p style="font-size: var(--font-size-sm); margin: 0;">We reviewed your anonymous profile and believe your
+              background in C-level operations aligns closely with our CTO opening. We'd love to connect and share more
+              details about the opportunity. All conversations are confidential.</p>
+          </div>
+
+          <div class="d-flex gap-md">
+            <div>
+              <div class="section-label mb-xs">Role</div>
+              <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Chief Technology Officer
+              </div>
+            </div>
+            <div>
+              <div class="section-label mb-xs">Compensation</div>
+              <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">$2.5M – $3M MXN / yr</div>
+            </div>
+            <div>
+              <div class="section-label mb-xs">Work Mode</div>
+              <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Híbrido · CDMX</div>
+            </div>
+          </div>
+
+          <hr class="hr">
+
+          <div class="d-flex gap-md">
+            <button class="btn btn-primary" style="flex: 1;">
+              ✓ Accept & Reveal Identity
+            </button>
+            <button class="btn btn-secondary" style="flex: 1;">
+              ✗ Decline
+            </button>
+          </div>
+          <p class="text-subtle text-center mt-sm mb-0" style="font-size: var(--font-size-xs);">
+            You can decline without your identity being revealed.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Input bar (disabled until invite accepted) -->
+      <div class="chat-input-bar" style="opacity: 0.5; pointer-events: none;">
+        <textarea class="form-control" rows="2" placeholder="Accept the connection to start messaging…"
+          style="resize: none; flex: 1;" disabled></textarea>
+        <button class="btn btn-primary" disabled>Send</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

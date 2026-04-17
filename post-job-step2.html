@@ -30,118 +30,45 @@
 
       <!-- Stepper -->
       <div class="stepper mb-xl">
-        <div class="stepper-item completed">
-          <div class="stepper-circle">✓</div>
-          <span>Role Details</span>
-        </div>
+        <div class="stepper-item completed"><div class="stepper-circle">✓</div><span>Details</span></div>
         <div class="stepper-line completed"></div>
-        <div class="stepper-item active">
-          <div class="stepper-circle">2</div>
-          <span>Requirements</span>
-        </div>
+        <div class="stepper-item active"><div class="stepper-circle">2</div><span>Requirements & Compensation</span></div>
         <div class="stepper-line"></div>
-        <div class="stepper-item">
-          <div class="stepper-circle">3</div>
-          <span>Compensation</span>
-        </div>
+        <div id="step-pill-3" class="stepper-item"><div class="stepper-circle">3</div><span>Payment</span></div>
         <div class="stepper-line"></div>
-        <div class="stepper-item">
-          <div class="stepper-circle">4</div>
-          <span>Review & Submit</span>
-        </div>
+        <div id="step-pill-4" class="stepper-item"><div class="stepper-circle">4</div><span>Finalize</span></div>
       </div>
 
-      <div class="card" style="padding: var(--space-xl);">
-        <h3 style="margin-bottom: var(--space-xl);">Step 2: Candidate Requirements</h3>
-        <form>
-
-          <div class="row">
-            <div class="col col-6">
-              <div class="form-group">
-                <label class="form-label">Minimum Years of Experience</label>
-                <select class="form-control">
-                  <option>8+ Years</option>
-                  <option>10+ Years</option>
-                  <option selected>12+ Years</option>
-                  <option>15+ Years</option>
-                  <option>20+ Years</option>
-                </select>
-              </div>
+          <div class="card mb-lg" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-xl);">Step 2: Candidate Requirements</h3>
+            <!-- Existing fields ... -->
+            <div class="form-group">
+                <label class="form-label">Key Required Skills / Expertise</label>
+                <input type="text" class="form-control" placeholder="e.g. P&L Management, FinTech Regs, Org Scaling">
             </div>
-            <div class="col col-6">
-              <div class="form-group">
-                <label class="form-label">Education Level</label>
-                <select class="form-control">
-                  <option>Bachelor's Degree</option>
-                  <option selected>Master's / MBA Preferred</option>
-                  <option>MBA Required</option>
-                  <option>PhD / Doctorate</option>
-                  <option>No Preference</option>
-                </select>
-              </div>
+
+            <hr class="hr my-xl">
+            <h3>Compensation & Package</h3>
+            <div class="row mt-lg">
+                <div class="col col-6">
+                    <div class="form-group">
+                        <label class="form-label">Min Salary (MXN)</label>
+                        <input type="text" class="form-control" placeholder="2,000,000">
+                    </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <label class="form-label">Max Salary (MXN)</label>
+                        <input type="text" class="form-control" placeholder="3,000,000">
+                    </div>
+                </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Language Requirements</label>
-            <div class="d-flex gap-lg mt-sm">
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox" checked> Spanish (Native)
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> English (Business)
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox" checked> English (Fluent)
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> Portuguese
-              </label>
-            </div>
+          <div class="d-flex justify-content-between align-items-center mt-lg">
+            <a href="post-job.html" class="btn btn-secondary">← Back</a>
+            <a href="post-job-step3.html" class="btn btn-primary btn-lg">Continue to Payment →</a>
           </div>
-
-          <div class="form-group">
-            <label class="form-label">Key Required Skills / Expertise</label>
-            <input type="text" class="form-control" placeholder="e.g. P&L Management, FinTech Regs, Cloud Architecture (AWS), Org Scaling">
-            <span class="form-hint">Comma-separated. These are used to match with qualified candidates.</span>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Industry Background Required</label>
-            <div class="d-flex flex-wrap gap-md mt-sm">
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox" checked> FinTech / Banking
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> Retail
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox" checked> Technology / SaaS
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> Healthcare
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> Logistics
-              </label>
-              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
-                <input type="checkbox"> Any / Open
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group mb-0">
-            <label class="form-label">Additional Requirements</label>
-            <textarea class="form-control" rows="4" placeholder="Any additional candidate requirements not covered above…" style="resize: vertical;"></textarea>
-          </div>
-
-        </form>
-      </div>
-
-      <div class="d-flex justify-content-between align-items-center mt-lg">
-        <a href="post-job.html" class="btn btn-secondary">← Back</a>
-        <a href="post-job-step3.html" class="btn btn-primary btn-lg">Continue to Compensation →</a>
-      </div>
 
     </div>
   </main>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Detail — Employer Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: var(--grey-50);">
+
+  <header class="header" style="position: sticky; z-index: 10;">
+    <div class="container" style="max-width: 100%; padding: 0 var(--space-xl);">
+      <div class="header-inner">
+        <a href="dashboard.html" class="logo">ExecBoard MX <span style="font-size: var(--font-size-xs); font-weight: 400; color: var(--grey-500); margin-left: 8px;">Employer Portal</span></a>
+        <div class="d-flex align-items-center gap-md">
+          <span class="font-medium text-muted" style="font-size: var(--font-size-sm);">Acme Corp México</span>
+          <div class="avatar avatar-sm">AC</div>
+          <a href="logout.html" class="btn btn-ghost btn-sm">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar company-sidebar">
+      <p class="sidebar-section-label" style="margin-top:0;">Main</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active">Job Postings</a>
+        <a href="company-profile.html" class="sidebar-link">Company Profile</a>
+        <a href="company-chat.html" class="sidebar-link">Messages <span class="badge badge-dark" style="margin-left:auto;font-size:10px;">3</span></a>
+      </nav>
+      <p class="sidebar-section-label">Account</p>
+      <nav class="sidebar-nav">
+        <a href="company-billing.html" class="sidebar-link">Billing</a>
+        <a href="company-settings.html" class="sidebar-link">Settings</a>
+      </nav>
+      <div style="margin-top:auto;padding-top:var(--space-xl);">
+        <a href="post-job.html" class="btn btn-primary btn-block mb-md">+ Post New Role</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="container" style="max-width: 900px; padding: 0;">
+        <div class="d-flex justify-content-between align-items-center mb-xl">
+          <a href="dashboard.html" class="btn btn-ghost btn-sm" style="padding-left: 0;">&larr; Back to Dashboard</a>
+          <div class="d-flex gap-sm">
+            <button class="btn btn-secondary">Edit Role</button>
+            <button class="btn btn-reject">Close Role</button>
+          </div>
+        </div>
+
+        <!-- Job Header Overview -->
+        <div class="card mb-lg" style="padding: var(--space-xxl) var(--space-xl);">
+          <div class="d-flex justify-content-between align-items-start mb-lg">
+            <div>
+              <div class="d-flex align-items-center gap-sm mb-md">
+                <span class="badge badge-dark">VP / EVP</span>
+                <span class="badge badge-default">Finance</span>
+                <span class="badge badge-success">Active</span>
+                <span class="text-subtle ml-sm" style="font-size: var(--font-size-xs);">Ref: EB-8994</span>
+              </div>
+              <h1 style="font-size: var(--font-size-4xl); margin-bottom: 8px;">Vice President of Finance</h1>
+              <p class="font-medium text-main" style="font-size: var(--font-size-lg);">Acme Corp México</p>
+            </div>
+          </div>
+          
+          <div class="row" style="margin-top: var(--space-xl);">
+            <div class="col col-3">
+               <div class="section-label mb-xs">Location</div>
+               <div class="font-medium">CDMX (Híbrido)</div>
+            </div>
+            <div class="col col-3">
+               <div class="section-label mb-xs">Salary Range</div>
+               <div class="font-medium">$2.2M – $2.8M MXN</div>
+            </div>
+            <div class="col col-3">
+               <div class="section-label mb-xs">Experience</div>
+               <div class="font-medium">10+ Years</div>
+            </div>
+            <div class="col col-3">
+               <div class="section-label mb-xs">Applicants</div>
+               <div class="font-bold text-main" style="font-size: var(--font-size-lg);">12 Candidates</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-8">
+            <div class="card mb-lg">
+              <h3 class="mb-lg">Role Details</h3>
+              <p>We are seeking an experienced Vice President of Finance to lead our financial operations and strategy in Mexico. The ideal candidate will have a strong background in FinTech compliance, reporting, and corporate finance.</p>
+              <h4 class="mt-lg mb-sm" style="font-size: var(--font-size-base);">Responsibilities</h4>
+              <ul style="list-style: disc; padding-left: var(--space-xl); color: var(--color-text-body); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 8px;">
+                <li>Oversee financial planning, analysis, and reporting.</li>
+                <li>Ensure compliance with Mexican financial regulations.</li>
+                <li>Drive unit economic improvements and capital allocation.</li>
+              </ul>
+              <h4 class="mt-lg mb-sm" style="font-size: var(--font-size-base);">Requirements</h4>
+              <ul style="list-style: disc; padding-left: var(--space-xl); color: var(--color-text-body); font-size: var(--font-size-sm); display: flex; flex-direction: column; gap: 8px;">
+                <li>10+ years of progressively responsible financial leadership roles.</li>
+                <li>Bilingual (English/Spanish).</li>
+                <li>Prior experience in a high-growth tech startup.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-4">
+             <div class="card mb-lg">
+               <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-md);">Status</h4>
+               <ul class="d-flex flex-column gap-sm">
+                 <li class="d-flex justify-content-between"><span class="text-muted text-sm">Published</span><span class="text-main font-medium text-sm">Mar 10, 2025</span></li>
+                 <li class="d-flex justify-content-between"><span class="text-muted text-sm">Expires</span><span class="text-main font-medium text-sm">Apr 10, 2025</span></li>
+                 <li class="d-flex justify-content-between"><span class="text-muted text-sm">Views</span><span class="text-main font-medium text-sm">345</span></li>
+               </ul>
+             </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

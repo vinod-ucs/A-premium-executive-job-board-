@@ -737,6 +737,10 @@ select.form-control {
   padding: var(--space-xl) var(--space-lg);
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
 }
 
 .sidebar-nav {
