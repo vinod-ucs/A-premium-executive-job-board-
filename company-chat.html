@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages — ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .chat-layout {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+    .chat-sidebar {
+      width: 300px;
+      border-right: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .chat-sidebar-header {
+      padding: var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .conversation-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .conversation-item:hover { background-color: var(--grey-50); }
+    .conversation-item.active { background-color: var(--grey-100); }
+    .chat-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-header {
+      padding: var(--space-md) var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      background-color: var(--grey-50);
+    }
+    .chat-input-bar {
+      padding: var(--space-md) var(--space-xl);
+      border-top: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+      display: flex;
+      gap: var(--space-sm);
+      align-items: flex-end;
+    }
+    .message-time {
+      font-size: 10px;
+      color: var(--grey-400);
+      margin-top: 4px;
+      display: block;
+    }
+  </style>
+</head>
+<body style="overflow: hidden;">
+
+  <header class="header">
+    <div class="container" style="max-width: 100%; padding: 0 var(--space-xl);">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX <span style="font-size: var(--font-size-xs); font-weight: 400; color: var(--grey-500); margin-left: 8px; border: none; padding: 0; letter-spacing: 0;">Employer Portal</span></a>
+        <div class="d-flex align-items-center gap-md">
+          <span class="font-medium text-muted" style="font-size: var(--font-size-sm);">Acme Corp México</span>
+          <div class="avatar avatar-sm">AC</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="chat-layout">
+
+    <!-- Conversation List -->
+    <div class="chat-sidebar">
+      <div class="chat-sidebar-header">
+        <h3 style="font-size: var(--font-size-base); margin-bottom: 0;">Messages</h3>
+        <p class="text-muted mb-0" style="font-size: var(--font-size-xs);">3 active conversations</p>
+      </div>
+
+      <!-- Conversation 1 — Active -->
+      <div class="conversation-item active">
+        <div class="avatar avatar-sm" style="flex-shrink: 0;">C1</div>
+        <div style="flex: 1; min-width: 0;">
+          <div class="d-flex justify-content-between align-items-baseline">
+            <span class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8842</span>
+            <span style="font-size: 10px; color: var(--grey-400);">2h ago</span>
+          </div>
+          <div class="text-muted" style="font-size: var(--font-size-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Thank you for the connection request…</div>
+          <div class="text-subtle mt-xs" style="font-size: 10px;">CTO Role &nbsp;·&nbsp; EB-8921</div>
+        </div>
+      </div>
+
+      <!-- Conversation 2 -->
+      <div class="conversation-item">
+        <div class="avatar avatar-sm" style="flex-shrink: 0;">C2</div>
+        <div style="flex: 1; min-width: 0;">
+          <div class="d-flex justify-content-between align-items-baseline">
+            <span class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8911</span>
+            <span style="font-size: 10px; color: var(--grey-400);">Yesterday</span>
+          </div>
+          <div class="text-muted" style="font-size: var(--font-size-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Looking forward to the next steps.</div>
+          <div class="text-subtle mt-xs" style="font-size: 10px;">CTO Role &nbsp;·&nbsp; EB-8921</div>
+        </div>
+      </div>
+
+      <!-- Conversation 3 -->
+      <div class="conversation-item">
+        <div class="avatar avatar-sm" style="flex-shrink: 0;">C3</div>
+        <div style="flex: 1; min-width: 0;">
+          <div class="d-flex justify-content-between align-items-baseline">
+            <span class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8790</span>
+            <span style="font-size: 10px; color: var(--grey-400);">3 days ago</span>
+          </div>
+          <div class="text-muted" style="font-size: var(--font-size-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Please let me know if you have any questions…</div>
+          <div class="text-subtle mt-xs" style="font-size: 10px;">Director of Product &nbsp;·&nbsp; EB-8902</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Main Area -->
+    <div class="chat-main">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="avatar avatar-sm">C1</div>
+        <div style="flex: 1;">
+          <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8842 <span class="badge badge-default" style="margin-left: 6px;">Confidential</span></div>
+          <div class="text-muted" style="font-size: var(--font-size-xs);">Applying for: Chief Technology Officer &nbsp;·&nbsp; EB-8921</div>
+        </div>
+        <div class="notice-banner notice-banner-info" style="padding: 6px 12px; margin: 0;">
+          <span style="font-size: 10px;">Identity revealed after mutual connection acceptance.</span>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="chat-messages">
+
+        <!-- System message -->
+        <div class="text-center">
+          <span style="font-size: 10px; color: var(--grey-400); background: var(--grey-150); padding: 4px 12px; border-radius: 99px;">Connection accepted — Apr 15, 2025</span>
+        </div>
+
+        <!-- Their message -->
+        <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 70%;">
+          <div class="message-bubble message-bubble-other">
+            Thank you for accepting my connection request. I'm very excited about the CTO opportunity at FinTech Global MX. I've spent the last 3 years in a similar capacity and believe my experience aligns well with what you're looking for.
+          </div>
+          <span class="message-time">Apr 15 · 10:22 AM</span>
+        </div>
+
+        <!-- Your message -->
+        <div style="display: flex; flex-direction: column; align-items: flex-end; max-width: 70%; margin-left: auto;">
+          <div class="message-bubble message-bubble-self">
+            Thank you for reaching out. Your background in FinTech infrastructure is very relevant. We'd love to set up a preliminary call. Would you be available next week?
+          </div>
+          <span class="message-time" style="text-align: right;">Apr 15 · 11:45 AM</span>
+        </div>
+
+        <!-- Their message -->
+        <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 70%;">
+          <div class="message-bubble message-bubble-other">
+            Absolutely — I'm available Tuesday or Thursday afternoon (after 3pm CDMX time). Please do let me know what works best.
+          </div>
+          <span class="message-time">Today · 9:15 AM</span>
+        </div>
+
+      </div>
+
+      <!-- Input Bar -->
+      <div class="chat-input-bar">
+        <textarea class="form-control" rows="2" placeholder="Type your message…" style="resize: none; flex: 1;"></textarea>
+        <button class="btn btn-primary" style="white-space: nowrap; align-self: flex-end;">Send</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

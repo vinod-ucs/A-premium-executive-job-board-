@@ -3,100 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Registration - ExecBoard MX</title>
+  <title>Register Your Company — ExecBoard MX</title>
+  <meta name="description" content="Post premium executive roles and access Mexico's top leadership talent.">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { background-color: var(--color-surface); padding-top: var(--space-xxl); padding-bottom: var(--space-xxl); }
+    body {
+      background-color: var(--grey-50);
+      padding: var(--space-xxl) var(--space-md);
+    }
+    .auth-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .section-divider-line { flex: 1; height: 1px; background-color: var(--color-border); }
+    .section-divider-text {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: var(--grey-500);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .plan-card {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .plan-card:hover { border-color: var(--grey-400); }
+    .plan-card.selected {
+      border-color: var(--grey-900);
+      background-color: var(--grey-50);
+    }
   </style>
 </head>
 <body>
 
-  <div class="container" style="max-width: 600px;">
-    
-    <div class="text-center mb-xl">
-      <a href="index.html" class="logo mb-md">ExecBoard MX</a>
-      <h1 style="font-size: 2rem;">Register Your Company</h1>
-      <p class="text-muted">Join top LATAM employers to hire vetted C-Level and VP talent.</p>
-    </div>
+  <div class="text-center mb-xl">
+    <a href="index.html" class="logo" style="display: inline-block; margin-bottom: var(--space-lg);">ExecBoard MX</a>
+    <h1 style="font-size: var(--font-size-3xl); margin-bottom: 8px;">Register Your Company</h1>
+    <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Access Mexico's top-tier executive talent pool.</p>
+  </div>
 
-    <div class="card p-xl mb-lg">
-      <h2 class="mb-lg" style="font-size: 1.25rem;">Administrator Details</h2>
-      
-      <form>
-        <div class="row">
-          <div class="col col-6 form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-control" placeholder="e.g. Carlos">
-          </div>
-          <div class="col col-6 form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-control" placeholder="e.g. Ruiz">
-          </div>
-        </div>
+  <div class="auth-card">
+    <form>
+      <!-- Company Details -->
+      <div class="section-divider" style="margin-top: 0;">
+        <div class="section-divider-line"></div>
+        <span class="section-divider-text">Company Information</span>
+        <div class="section-divider-line"></div>
+      </div>
 
-        <div class="form-group">
-          <label class="form-label">Work Email <span class="text-muted font-normal">(must be a company domain)</span></label>
-          <input type="email" class="form-control" placeholder="carlos@company.mx">
-        </div>
+      <div class="form-group">
+        <label class="form-label" for="company-name">Legal Company Name</label>
+        <input type="text" id="company-name" class="form-control" placeholder="e.g. Acme Corp México S.A. de C.V.">
+      </div>
 
-        <div class="form-group mb-0">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" placeholder="Min 8 characters">
-        </div>
-      </form>
-    </div>
-
-    <div class="card p-xl">
-      <h2 class="mb-lg" style="font-size: 1.25rem;">Company Setup</h2>
-      
-      <form>
-        <div class="form-group">
-          <label class="form-label">Company Legal Name</label>
-          <input type="text" class="form-control" placeholder="e.g. Empresa Innovadora S.A. de C.V.">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Company Website</label>
-          <input type="url" class="form-control" placeholder="https://www.company.mx">
-        </div>
-
-        <div class="row mb-lg">
-          <div class="col col-6 form-group mb-0">
-            <label class="form-label">Industry</label>
-            <select class="form-control">
-              <option>Technology</option>
-              <option>Finance</option>
-              <option>Healthcare</option>
-              <option>Logistics</option>
+      <div class="row">
+        <div class="col col-6">
+          <div class="form-group">
+            <label class="form-label" for="industry">Industry</label>
+            <select id="industry" class="form-control">
+              <option value="">Select Industry</option>
+              <option>Technology / FinTech</option>
+              <option>Healthcare & Pharma</option>
+              <option>Finance & Banking</option>
+              <option>Retail & E-Commerce</option>
+              <option>Logistics & Supply Chain</option>
+              <option>Manufacturing</option>
+              <option>Consumer Goods</option>
               <option>Other</option>
             </select>
           </div>
-          <div class="col col-6 form-group mb-0">
-            <label class="form-label">Company Size</label>
-            <select class="form-control">
-              <option>1-50 Employees</option>
-              <option>51-200 Employees</option>
-              <option>201-1000 Employees</option>
-              <option>1000+ Employees</option>
+        </div>
+        <div class="col col-6">
+          <div class="form-group">
+            <label class="form-label" for="company-size">Company Size</label>
+            <select id="company-size" class="form-control">
+              <option value="">Select Size</option>
+              <option>1–50 employees</option>
+              <option>51–200 employees</option>
+              <option>201–1,000 employees</option>
+              <option>1,001–5,000 employees</option>
+              <option>5,000+ employees</option>
             </select>
           </div>
         </div>
-        
-        <div class="p-sm mt-lg mb-xl rounded" style="background-color: var(--color-warning-bg); border: 1px solid var(--color-warning-border);">
-           <p class="m-0 text-warning font-semibold" style="font-size: 0.875rem; color: var(--color-warning-text);">Note: All employer accounts undergo manual verification before jobs can be published.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="website">Company Website</label>
+        <input type="url" id="website" class="form-control" placeholder="https://yourcompany.com">
+      </div>
+
+      <!-- Account Admin -->
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <span class="section-divider-text">Account Administrator</span>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="row">
+        <div class="col col-6">
+          <div class="form-group">
+            <label class="form-label" for="admin-first">First Name</label>
+            <input type="text" id="admin-first" class="form-control" placeholder="Juan">
+          </div>
         </div>
+        <div class="col col-6">
+          <div class="form-group">
+            <label class="form-label" for="admin-last">Last Name</label>
+            <input type="text" id="admin-last" class="form-control" placeholder="García">
+          </div>
+        </div>
+      </div>
 
-        <a href="dashboard-empty.html" class="btn btn-primary btn-block" style="padding: 12px;">Create Employer Account</a>
-      </form>
-    </div>
+      <div class="form-group">
+        <label class="form-label" for="admin-email">Work Email</label>
+        <input type="email" id="admin-email" class="form-control" placeholder="juan@company.com">
+        <span class="form-hint">Must be a verified corporate email address.</span>
+      </div>
 
-    <div class="text-center mt-lg">
-      <p class="text-muted">Already registered? <a href="login.html" class="font-semibold text-main">Sign in instead</a></p>
-      <p class="text-muted" style="margin-top: 24px; font-size: 0.875rem;">Are you an executive seeking jobs? <a href="signup-candidate.html" class="font-semibold text-main">Apply as Candidate</a></p>
-    </div>
+      <div class="form-group mb-xl">
+        <label class="form-label" for="admin-password">Password</label>
+        <input type="password" id="admin-password" class="form-control" placeholder="Minimum 8 characters">
+      </div>
 
+      <!-- Notice -->
+      <div class="notice-banner notice-banner-info mb-xl">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Company accounts are manually reviewed for legitimacy within 24 hours before posting is enabled.</span>
+      </div>
+
+      <a href="dashboard.html" class="btn btn-primary btn-block btn-lg" style="text-align: center;">
+        Create Company Account
+      </a>
+
+      <p class="text-subtle text-center mt-md mb-0" style="font-size: var(--font-size-xs);">
+        By registering, you agree to our <a href="#" class="text-muted">Terms of Service</a> and <a href="#" class="text-muted">Privacy Policy</a>.
+      </p>
+    </form>
   </div>
+
+  <p class="text-muted mt-lg mb-0" style="font-size: var(--font-size-sm); text-align: center;">
+    Already registered? <a href="login.html" class="font-semibold text-main">Sign in</a>
+  </p>
 
 </body>
 </html>

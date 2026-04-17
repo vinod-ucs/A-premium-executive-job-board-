@@ -3,56 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - ExecBoard MX</title>
+  <title>Sign In — ExecBoard MX</title>
+  <meta name="description" content="Sign in to your ExecBoard MX account.">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { background-color: var(--color-surface); display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    body {
+      background-color: var(--grey-50);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl) var(--space-md);
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+    .auth-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      width: 100%;
+      max-width: 440px;
+      box-shadow: var(--shadow-lg);
+    }
+    .auth-tabs {
+      display: flex;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: transparent;
+      border: none;
+      font-family: var(--font-family);
+    }
+    .auth-tab.active {
+      background-color: var(--grey-900);
+      color: var(--grey-0);
+      font-weight: 600;
+    }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+    .auth-divider-line { flex: 1; height: 1px; background-color: var(--color-border); }
+    .auth-divider-text { font-size: var(--font-size-xs); color: var(--color-text-subtle); font-weight: 500; }
   </style>
 </head>
 <body>
 
-  <div class="container" style="max-width: 500px;">
-    
-    <div class="text-center mb-xl">
-      <a href="index.html" class="logo mb-md">ExecBoard MX</a>
-      <h1 style="font-size: 2rem;">Welcome back</h1>
-      <p class="text-muted">Sign in to your account.</p>
+  <div style="margin-bottom: var(--space-xl);">
+    <a href="index.html" class="logo">ExecBoard MX</a>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-header" style="margin-bottom: var(--space-lg);">
+      <h1 style="font-size: var(--font-size-3xl); margin-bottom: 6px;">Welcome back</h1>
+      <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Sign in to your executive account</p>
     </div>
 
-    <div class="card p-xl">
-      
-      <!-- Login Tabs -->
-      <div class="d-flex mb-xl" style="border-bottom: 2px solid var(--color-border);">
-        <div class="w-100 text-center py-sm font-semibold cursor-pointer" style="border-bottom: 2px solid var(--color-primary); color: var(--color-primary); margin-bottom: -2px;">Candidate</div>
-        <div class="w-100 text-center py-sm font-semibold text-muted cursor-pointer">Employer / Admin</div>
+    <!-- Role Tabs -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-candidate">Candidate</button>
+      <button class="auth-tab" id="tab-employer">Employer / Company</button>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label class="form-label" for="login-email">Email Address</label>
+        <input type="email" id="login-email" class="form-control" placeholder="you@company.com">
       </div>
 
-      <form>
-        <div class="form-group mb-lg">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-control" placeholder="you@example.com">
+      <div class="form-group mb-xl">
+        <div class="d-flex justify-content-between align-items-center mb-sm" style="margin-bottom: 6px;">
+          <label class="form-label mb-0" for="login-password">Password</label>
+          <a href="#" class="text-muted" style="font-size: var(--font-size-xs);">Forgot password?</a>
         </div>
-        
-        <div class="form-group mb-lg">
-          <div class="d-flex justify-content-between align-items-center mb-sm">
-            <label class="form-label m-0">Password</label>
-            <a href="#" class="text-muted" style="font-size: 0.875rem;">Forgot password?</a>
-          </div>
-          <input type="password" class="form-control" placeholder="••••••••">
-        </div>
+        <input type="password" id="login-password" class="form-control" placeholder="••••••••">
+      </div>
 
-        <a href="profile.html" class="btn btn-primary btn-block mt-xl" style="padding: 12px;">Sign In</a>
-        <!-- Note: Static wireframe routes candidate to profile.html. An employer would go to dashboard.html -->
-      </form>
-      
-    </div>
-
-    <div class="text-center mt-lg">
-      <p class="text-muted">Don't have an account? <br> <a href="signup-candidate.html" class="font-semibold text-main">Join as Candidate</a> or <a href="signup-company.html" class="font-semibold text-main">Register Company</a></p>
-    </div>
-
+      <a href="profile.html" class="btn btn-primary btn-block btn-lg" style="text-align: center;">
+        Sign In
+      </a>
+      <!-- Static wireframe: candidates go to profile.html, employers to dashboard.html -->
+    </form>
   </div>
+
+  <p class="text-muted mt-lg" style="font-size: var(--font-size-sm); text-align: center;">
+    Don't have an account?&nbsp;
+    <a href="signup-candidate.html" class="font-semibold text-main">Join as Candidate</a>
+    &nbsp;or&nbsp;
+    <a href="signup-company.html" class="font-semibold text-main">Register Company</a>
+  </p>
 
 </body>
 </html>

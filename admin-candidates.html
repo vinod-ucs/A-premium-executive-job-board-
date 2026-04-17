@@ -3,149 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Candidates Directory - ExecBoard MX</title>
+  <title>Candidate Directory — Admin — ExecBoard MX</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-  <style>
-    body { background-color: var(--color-bg); }
-    .admin-header { background-color: #111827; color: #FFF; padding: var(--space-md) var(--space-lg); }
-    .admin-logo { color: #FFF; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.05em; border: 2px solid #FFF; padding: 2px 8px; }
-  </style>
 </head>
 <body>
 
-  <!-- Top Bar: Admin specific -->
-  <header class="admin-header d-flex justify-content-between align-items-center">
-    <div class="admin-logo"><a href="index.html" class="logo">ExecBoard MX</a></div>
+  <header class="admin-header">
+    <div class="admin-logo">ExecBoard MX Admin</div>
     <div class="d-flex align-items-center gap-md">
-      <span class="badge" style="background-color: #374151; color: #FFF;">System Status: Green</span>
-      <span style="font-size: 0.875rem;">SuperAdmin (ID: 01)</span>
-      <button class="btn" style="background-color: transparent; color: #FFF; border: 1px solid #4B5563; padding: 4px 12px; font-size: 0.875rem;">Logout</button>
+      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System Normal</span>
+      <span style="font-size: var(--font-size-xs); color: var(--grey-400);">SuperAdmin (ID: 01)</span>
+      <button class="btn btn-ghost btn-sm" style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
     </div>
   </header>
 
-  <main style="display: flex; min-height: calc(100vh - 58px);">
-    
-    <!-- Sidebar Navigation -->
-    <div style="width: 250px; border-right: 1px solid var(--color-border); background-color: var(--color-surface); padding: var(--space-xl) var(--space-lg);">
-      <div class="mb-xl text-muted font-semibold" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Curation Queue</div>
-      <nav class="d-flex flex-column gap-md mb-xxl">
-        <a href="admin.html" class="text-muted d-flex justify-content-between align-items-center">
-          Pending Jobs <span class="badge badge-warning">12</span>
-        </a>
-        <a href="#" class="text-muted">Approved Jobs</a>
-        <a href="#" class="text-muted">Rejected Queue</a>
+  <div class="app-layout" style="min-height: calc(100vh - 56px);">
+    <aside class="admin-sidebar">
+      <p class="sidebar-section-label" style="margin-top: 0;">Curation Queue</p>
+      <nav class="sidebar-nav mb-xl">
+        <a href="admin.html" class="sidebar-link">Pending Jobs <span class="badge badge-warning" style="margin-left: auto;">12</span></a>
+        <a href="#" class="sidebar-link">Approved Jobs</a>
+        <a href="#" class="sidebar-link">Rejected Queue</a>
       </nav>
-
-      <div class="mb-md text-muted font-semibold" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Directory</div>
-      <nav class="d-flex flex-column gap-md">
-        <a href="admin-companies.html" class="text-muted">Companies</a>
-        <a href="admin-candidates.html" class="font-semibold" style="color: var(--color-primary);">Candidates</a>
-        <a href="#" class="text-muted d-flex justify-content-between align-items-center">
-          Support Tickets <span class="badge badge-danger">3</span>
-        </a>
+      <p class="sidebar-section-label">Directory</p>
+      <nav class="sidebar-nav">
+        <a href="admin-companies.html" class="sidebar-link">Companies</a>
+        <a href="admin-candidates.html" class="sidebar-link active">Candidates</a>
+        <a href="#" class="sidebar-link">Support Tickets <span class="badge badge-danger" style="margin-left: auto;">3</span></a>
       </nav>
-    </div>
+    </aside>
 
-    <!-- Main Content Area -->
-    <div style="flex: 1; padding: var(--space-xl);">
-      
-      <div class="d-flex justify-content-between align-items-center mb-xl">
+    <main class="main-content">
+      <div class="d-flex justify-content-between align-items-start mb-xl">
         <div>
-          <h1 class="mb-sm" style="font-size: 2rem;">Candidate Directory</h1>
-          <p class="text-muted">Review verified executive talent, manage profile privacy, and monitor application activity.</p>
+          <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Candidate Directory</h1>
+          <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">All registered candidates. Approve, suspend, or review their profiles.</p>
         </div>
-        <div class="search-bar" style="width: 300px;">
-          <input type="text" class="form-control" placeholder="Search ID or Keyword...">
+        <div class="search-bar" style="width: 280px; border-radius: var(--radius);">
+          <input type="text" class="form-control" placeholder="Search by ID or role…" style="padding: 9px 14px; font-size: var(--font-size-sm);">
         </div>
       </div>
 
-      <!-- Table View -->
-      <div class="card" style="padding: 0;">
+      <div class="tabs mb-lg">
+        <div class="tab active">All (142)</div>
+        <div class="tab">Pending Approval (8)</div>
+        <div class="tab">Approved (128)</div>
+        <div class="tab">Suspended (6)</div>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
         <table class="table">
-          <thead style="background-color: var(--color-surface);">
+          <thead>
             <tr>
-              <th style="padding-left: var(--space-lg); width: 80px;">ID</th>
-              <th>Executive Profile</th>
-              <th>Activity Metrics</th>
+              <th>Candidate</th>
+              <th>Current Level</th>
+              <th>Location</th>
               <th>Status</th>
-              <th style="text-align: right; padding-right: var(--space-lg);">Manage</th>
+              <th>Joined</th>
+              <th style="text-align: right;">Actions</th>
             </tr>
           </thead>
           <tbody>
-            
-            <!-- Row 1 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">P-8820</td>
               <td>
-                <div class="font-semibold text-main mb-sm">Alejandra Vargas</div>
-                <div class="text-muted" style="font-size: 0.875rem;">COO / VP Ops • CDMX</div>
+                <div class="d-flex align-items-center gap-sm">
+                  <div class="avatar avatar-sm">AV</div>
+                  <div>
+                    <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8842</div>
+                    <div class="text-subtle" style="font-size: 10px;">Vetting — LinkedIn ✓</div>
+                  </div>
+                </div>
               </td>
-              <td>
-                <div class="text-muted" style="font-size: 0.875rem;">14 Applications</div>
-                <div class="text-muted" style="font-size: 0.875rem;">Last login: 2h ago</div>
-              </td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td style="font-size: var(--font-size-sm);">COO / VP Operations</td>
+              <td style="font-size: var(--font-size-sm);">CDMX</td>
+              <td><span class="badge badge-success">Approved</span></td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 15, 2025</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Profile</button>
-                  <button class="btn" style="background-color: transparent; color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Suspend</button>
+                  <button class="btn btn-secondary btn-sm">View Profile</button>
+                  <button class="btn btn-reject btn-sm">Suspend</button>
                 </div>
               </td>
             </tr>
-
-            <!-- Row 2 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">P-8912</td>
               <td>
-                <div class="font-semibold text-main mb-sm">Candidate #8912 (Private)</div>
-                <div class="text-muted" style="font-size: 0.875rem;">CTO / VP Eng • Monterrey</div>
+                <div class="d-flex align-items-center gap-sm">
+                  <div class="avatar avatar-sm">JR</div>
+                  <div>
+                    <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8911</div>
+                    <div class="text-subtle" style="font-size: 10px;">Pending — LinkedIn ✓</div>
+                  </div>
+                </div>
               </td>
-              <td>
-                <div class="text-muted" style="font-size: 0.875rem;">3 Applications</div>
-                <div class="text-muted" style="font-size: 0.875rem;">Last login: Yesterday</div>
-              </td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td style="font-size: var(--font-size-sm);">Director of Technology</td>
+              <td style="font-size: var(--font-size-sm);">Monterrey</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 17, 2025</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Profile</button>
-                  <button class="btn" style="background-color: transparent; color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Suspend</button>
+                  <button class="btn btn-secondary btn-sm">View Profile</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
                 </div>
               </td>
             </tr>
-
-            <!-- Row 3 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">P-8774</td>
               <td>
-                <div class="font-semibold text-main mb-sm">Candidate #8774 (Private)</div>
-                <div class="text-muted" style="font-size: 0.875rem;">VP Sales • Guadalajara</div>
+                <div class="d-flex align-items-center gap-sm">
+                  <div class="avatar avatar-sm">CM</div>
+                  <div>
+                    <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8790</div>
+                    <div class="text-subtle" style="font-size: 10px;">Vetting — LinkedIn ✓</div>
+                  </div>
+                </div>
               </td>
-              <td>
-                <div class="text-muted" style="font-size: 0.875rem;">0 Applications</div>
-                <div class="text-muted" style="font-size: 0.875rem; color: var(--color-danger-text);">Profile Incomplete</div>
-              </td>
-              <td>
-                <span class="badge badge-default">New</span>
-              </td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td style="font-size: var(--font-size-sm);">CTO / VP Engineering</td>
+              <td style="font-size: var(--font-size-sm);">Guadalajara</td>
+              <td><span class="badge badge-success">Approved</span></td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 10, 2025</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Details</button>
-                  <button class="btn" style="background-color: transparent; color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Delete</button>
+                  <button class="btn btn-secondary btn-sm">View Profile</button>
+                  <button class="btn btn-reject btn-sm">Suspend</button>
                 </div>
               </td>
             </tr>
-
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-sm">
+                  <div class="avatar avatar-sm">LP</div>
+                  <div>
+                    <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Candidate #8805</div>
+                    <div class="text-subtle" style="font-size: 10px;">Pending — No LinkedIn</div>
+                  </div>
+                </div>
+              </td>
+              <td style="font-size: var(--font-size-sm);">CFO</td>
+              <td style="font-size: var(--font-size-sm);">CDMX</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 16, 2025</td>
+              <td style="text-align: right;">
+                <div class="d-flex justify-content-end gap-sm">
+                  <button class="btn btn-secondary btn-sm">View Profile</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-
-    </div>
-  </main>
+    </main>
+  </div>
 
 </body>
 </html>

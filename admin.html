@@ -1,178 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Control Panel - ExecBoard MX</title>
+  <title>Admin Control Panel — ExecBoard MX</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: var(--color-bg);
-    }
-
-    .admin-header {
-      background-color: #111827;
-      color: #FFF;
-      padding: var(--space-md) var(--space-lg);
-    }
-
-    .admin-logo {
-      color: #FFF;
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: -0.05em;
-      border: 2px solid #FFF;
-      padding: 2px 8px;
-    }
-  </style>
 </head>
-
 <body>
 
-  <!-- Top Bar: Admin specific -->
-  <header class="admin-header d-flex justify-content-between align-items-center">
+  <!-- Admin Header (dark) -->
+  <header class="admin-header">
     <div class="admin-logo">ExecBoard MX Admin</div>
     <div class="d-flex align-items-center gap-md">
-      <span class="badge" style="background-color: #374151; color: #FFF;">System Status: Green</span>
-      <span style="font-size: 0.875rem;">SuperAdmin (ID: 01)</span>
-      <button class="btn"
-        style="background-color: transparent; color: #FFF; border: 1px solid #4B5563; padding: 4px 12px; font-size: 0.875rem;">Logout</button>
+      <span class="badge badge-dark" style="background-color: #1a2e1a; color: #6fcf6f; border-color: #2d4d2d;">● System Normal</span>
+      <span style="font-size: var(--font-size-xs); color: var(--grey-400);">SuperAdmin (ID: 01)</span>
+      <button class="btn btn-ghost btn-sm" style="color: var(--grey-400); border-color: var(--grey-700);">Logout</button>
     </div>
   </header>
 
-  <main style="display: flex; min-height: calc(100vh - 58px);">
+  <div class="app-layout" style="min-height: calc(100vh - 56px);">
 
-    <!-- Sidebar Navigation -->
-    <div
-      style="width: 250px; border-right: 1px solid var(--color-border); background-color: var(--color-surface); padding: var(--space-xl) var(--space-lg);">
-      <div class="mb-xl text-muted font-semibold"
-        style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Curation Queue</div>
-      <nav class="d-flex flex-column gap-md mb-xxl">
-        <a href="#" class="font-semibold d-flex justify-content-between align-items-center"
-          style="color: var(--color-primary);">
-          Pending Jobs <span class="badge badge-warning">12</span>
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <p class="sidebar-section-label" style="margin-top: 0;">Curation Queue</p>
+      <nav class="sidebar-nav mb-xl">
+        <a href="admin.html" class="sidebar-link active">
+          Pending Jobs
+          <span class="badge badge-warning" style="margin-left: auto;">12</span>
         </a>
-        <a href="#" class="text-muted">Approved Jobs</a>
-        <a href="#" class="text-muted">Rejected Queue</a>
+        <a href="#" class="sidebar-link">Approved Jobs</a>
+        <a href="#" class="sidebar-link">Rejected Queue</a>
       </nav>
 
-      <div class="mb-md text-muted font-semibold"
-        style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Directory</div>
-      <nav class="d-flex flex-column gap-md">
-        <a href="admin-companies.html" class="text-muted">Companies</a>
-        <a href="admin-candidates.html" class="text-muted">Candidates</a>
-        <a href="#" class="text-muted d-flex justify-content-between align-items-center">
-          Support Tickets <span class="badge badge-danger">3</span>
+      <p class="sidebar-section-label">Directory</p>
+      <nav class="sidebar-nav">
+        <a href="admin-companies.html" class="sidebar-link">Companies</a>
+        <a href="admin-candidates.html" class="sidebar-link">Candidates</a>
+        <a href="#" class="sidebar-link">
+          Support Tickets
+          <span class="badge badge-danger" style="margin-left: auto;">3</span>
         </a>
       </nav>
-    </div>
+    </aside>
 
-    <!-- Main Content Area -->
-    <div style="flex: 1; padding: var(--space-xl);">
+    <!-- Main -->
+    <main class="main-content">
 
-      <div class="d-flex justify-content-between align-items-center mb-xl">
+      <!-- Page Header -->
+      <div class="d-flex justify-content-between align-items-start mb-xl">
         <div>
-          <h1 class="mb-sm" style="font-size: 2rem;">Pending Jobs Curation (Mexico region)</h1>
-          <p class="text-muted">Review incoming executive roles for quality and accuracy before publishing.</p>
+          <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Pending Jobs — Curation Queue</h1>
+          <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Review incoming executive roles for quality and accuracy before publishing to candidates.</p>
         </div>
-        <div class="search-bar" style="width: 300px;">
-          <input type="text" class="form-control" placeholder="Search ID or Company...">
+        <div class="search-bar" style="width: 280px; border-radius: var(--radius);">
+          <input type="text" class="form-control" placeholder="Search ID or company…" style="padding: 9px 14px; font-size: var(--font-size-sm);">
         </div>
       </div>
 
-      <!-- Table View -->
-      <div class="card" style="padding: 0;">
+      <!-- Stats -->
+      <div class="row mb-xl" style="gap: 0;">
+        <div class="col col-3" style="padding-right: var(--space-md);">
+          <div class="stat-card"><div class="stat-card-value">12</div><div class="stat-card-label">Pending Review</div></div>
+        </div>
+        <div class="col col-3" style="padding-right: var(--space-md);">
+          <div class="stat-card"><div class="stat-card-value">48</div><div class="stat-card-label">Live Jobs</div></div>
+        </div>
+        <div class="col col-3" style="padding-right: var(--space-md);">
+          <div class="stat-card"><div class="stat-card-value">7</div><div class="stat-card-label">Rejected (30d)</div></div>
+        </div>
+        <div class="col col-3">
+          <div class="stat-card"><div class="stat-card-value">3</div><div class="stat-card-label">Open Tickets</div></div>
+        </div>
+      </div>
+
+      <!-- Review Table -->
+      <div class="card" style="padding: 0; overflow: hidden;">
         <table class="table">
-          <thead style="background-color: var(--color-surface);">
+          <thead>
             <tr>
-              <th style="padding-left: var(--space-lg); width: 80px;">ID</th>
+              <th>Ref ID</th>
               <th>Job Details</th>
-              <th>Company details</th>
-              <th>Date Submitted</th>
-              <th style="text-align: right; padding-right: var(--space-lg);">Review Actions</th>
+              <th>Company</th>
+              <th>Submitted</th>
+              <th style="text-align: right;">Actions</th>
             </tr>
           </thead>
           <tbody>
 
-            <!-- Row 1 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">#8994</td>
+              <td class="text-muted" style="font-size: var(--font-size-xs); font-weight: 600;">#8994</td>
               <td>
-                <div class="font-semibold text-main mb-sm">VP of Sales</div>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm); margin-bottom: 4px;">VP of Sales</div>
                 <div class="d-flex gap-sm">
-                  <span class="badge badge-default" style="font-size: 0.75rem;">CDMX</span>
-                  <span class="text-muted" style="font-size: 0.875rem;">$1.8M - $2.2M MXN</span>
+                  <span class="badge badge-default">CDMX</span>
+                  <span class="text-muted" style="font-size: var(--font-size-xs);">$1.8M–$2.2M MXN</span>
                 </div>
               </td>
               <td>
-                <div class="font-semibold">Acme Corp MX</div>
-                <a href="#" class="text-muted" style="font-size: 0.875rem; text-decoration: underline;">View Co.
-                  Profile</a>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Acme Corp MX</div>
+                <a href="admin-companies.html" class="text-muted" style="font-size: var(--font-size-xs); text-decoration: underline;">View Profile</a>
               </td>
-              <td class="text-muted">2 hours ago</td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td class="text-muted" style="font-size: var(--font-size-sm);">2 hours ago</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Full</button>
-                  <button class="btn"
-                    style="background-color: var(--color-success-bg); color: var(--color-success-text); border: 1px solid var(--color-success-border); padding: 6px 12px; font-size: 0.875rem;">Approve</button>
-                  <button class="btn"
-                    style="background-color: var(--color-danger-bg); color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Reject</button>
+                  <button class="btn btn-secondary btn-sm">View Full</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
                 </div>
               </td>
             </tr>
 
-            <!-- Row 2 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">#8995</td>
+              <td class="text-muted" style="font-size: var(--font-size-xs); font-weight: 600;">#8995</td>
               <td>
-                <div class="font-semibold text-main mb-sm">Chief Marketing Officer</div>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm); margin-bottom: 4px;">Chief Marketing Officer</div>
                 <div class="d-flex gap-sm">
-                  <span class="badge badge-default" style="font-size: 0.75rem;">Guadalajara</span>
-                  <span class="text-muted" style="font-size: 0.875rem;">$2.5M - $3M MXN</span>
+                  <span class="badge badge-default">Guadalajara</span>
+                  <span class="text-muted" style="font-size: var(--font-size-xs);">$2.5M–$3M MXN</span>
                 </div>
               </td>
               <td>
-                <div class="font-semibold">RetailBrand LLC</div>
-                <a href="#" class="text-muted" style="font-size: 0.875rem; text-decoration: underline;">View Co.
-                  Profile</a>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">RetailBrand LLC</div>
+                <a href="admin-companies.html" class="text-muted" style="font-size: var(--font-size-xs); text-decoration: underline;">View Profile</a>
               </td>
-              <td class="text-muted">5 hours ago</td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td class="text-muted" style="font-size: var(--font-size-sm);">5 hours ago</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Full</button>
-                  <button class="btn"
-                    style="background-color: var(--color-success-bg); color: var(--color-success-text); border: 1px solid var(--color-success-border); padding: 6px 12px; font-size: 0.875rem;">Approve</button>
-                  <button class="btn"
-                    style="background-color: var(--color-danger-bg); color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Reject</button>
+                  <button class="btn btn-secondary btn-sm">View Full</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
                 </div>
               </td>
             </tr>
 
-            <!-- Row 3 -->
             <tr>
-              <td style="padding-left: var(--space-lg);" class="text-muted">#8996</td>
+              <td class="text-muted" style="font-size: var(--font-size-xs); font-weight: 600;">#8996</td>
               <td>
-                <div class="font-semibold text-main mb-sm">Director of Engineering</div>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm); margin-bottom: 4px;">Director of Engineering</div>
                 <div class="d-flex gap-sm">
-                  <span class="badge badge-default" style="font-size: 0.75rem;">Monterrey</span>
-                  <span class="text-muted" style="font-size: 0.875rem;">$1.9M - $2.1M MXN</span>
+                  <span class="badge badge-default">Monterrey</span>
+                  <span class="text-muted" style="font-size: var(--font-size-xs);">$1.9M–$2.1M MXN</span>
                 </div>
               </td>
               <td>
-                <div class="font-semibold">TechStart Labs</div>
-                <a href="#" class="text-muted" style="font-size: 0.875rem; text-decoration: underline;">View Co.
-                  Profile</a>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">TechStart Labs</div>
+                <a href="admin-companies.html" class="text-muted" style="font-size: var(--font-size-xs); text-decoration: underline;">View Profile</a>
               </td>
-              <td class="text-muted">Yesterday</td>
-              <td style="text-align: right; padding-right: var(--space-lg);">
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Yesterday</td>
+              <td style="text-align: right;">
                 <div class="d-flex justify-content-end gap-sm">
-                  <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.875rem;">View Full</button>
-                  <button class="btn"
-                    style="background-color: var(--color-success-bg); color: var(--color-success-text); border: 1px solid var(--color-success-border); padding: 6px 12px; font-size: 0.875rem;">Approve</button>
-                  <button class="btn"
-                    style="background-color: var(--color-danger-bg); color: var(--color-danger-text); border: 1px solid var(--color-danger-border); padding: 6px 12px; font-size: 0.875rem;">Reject</button>
+                  <button class="btn btn-secondary btn-sm">View Full</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="text-muted" style="font-size: var(--font-size-xs); font-weight: 600;">#8997</td>
+              <td>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm); margin-bottom: 4px;">Chief People Officer</div>
+                <div class="d-flex gap-sm">
+                  <span class="badge badge-default">CDMX</span>
+                  <span class="text-muted" style="font-size: var(--font-size-xs);">$2.0M–$2.5M MXN</span>
+                </div>
+              </td>
+              <td>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">Grupo Nexo</div>
+                <a href="admin-companies.html" class="text-muted" style="font-size: var(--font-size-xs); text-decoration: underline;">View Profile</a>
+              </td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">2 days ago</td>
+              <td style="text-align: right;">
+                <div class="d-flex justify-content-end gap-sm">
+                  <button class="btn btn-secondary btn-sm">View Full</button>
+                  <button class="btn btn-approve btn-sm">Approve</button>
+                  <button class="btn btn-reject btn-sm">Reject</button>
                 </div>
               </td>
             </tr>
@@ -181,11 +183,8 @@
         </table>
       </div>
 
-    </div>
-  </main>
-
-
+    </main>
+  </div>
 
 </body>
-
 </html>

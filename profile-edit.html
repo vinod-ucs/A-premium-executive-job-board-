@@ -3,126 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Profile - ExecBoard MX</title>
+  <title>Edit Profile — ExecBoard MX</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: var(--grey-50); padding-bottom: var(--space-xxl); }
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin: var(--space-xl) 0 var(--space-lg);
+    }
+    .section-divider-line { flex: 1; height: 1px; background-color: var(--color-border); }
+    .section-divider-text {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: var(--grey-500);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+  </style>
 </head>
-<body style="background-color: var(--color-surface);">
+<body>
 
-  <!-- Logged in Header Minimal -->
-  <header class="header bg-white">
-    <div class="container d-flex justify-content-between align-items-center">
-       <a href="index.html" class="logo">ExecBoard MX</a>
-       <span class="text-muted font-semibold">Editing Profile</span>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <div class="d-flex align-items-center gap-md">
+          <a href="profile.html" class="btn btn-ghost btn-sm">← Back to Profile</a>
+          <div class="avatar avatar-sm">AV</div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="py-xl">
-    <div class="container" style="max-width: 800px;">
-      
-      <div class="d-flex justify-content-between align-items-center mb-xl">
-        <h1>Edit Profile</h1>
-        <a href="profile.html" class="btn btn-secondary">Cancel</a>
+  <main style="padding-top: var(--space-xxl);">
+    <div class="container" style="max-width: 760px;">
+
+      <div class="mb-xl">
+        <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Edit Your Profile</h1>
+        <p class="text-muted mb-0">Keep your profile updated to improve visibility to top employers.</p>
       </div>
 
-      <div class="card p-xl mb-lg">
-        <h2 class="mb-lg" style="font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm);">Basic Information</h2>
-        
-        <div class="row">
-          <div class="col col-6 form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-control" value="Alejandra">
+      <div class="card" style="padding: var(--space-xl);">
+        <form>
+          <!-- Personal -->
+          <div class="section-divider" style="margin-top: 0;">
+            <div class="section-divider-line"></div>
+            <span class="section-divider-text">Personal Details</span>
+            <div class="section-divider-line"></div>
           </div>
-          <div class="col col-6 form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-control" value="Vargas">
-          </div>
-        </div>
 
-        <div class="form-group mt-md">
-          <label class="form-label">Professional Headline</label>
-          <input type="text" class="form-control" value="Chief Operating Officer / VP Operations" placeholder="e.g. Director of Engineering">
-        </div>
-
-        <div class="row mt-md">
-          <div class="col col-6 form-group">
-            <label class="form-label">Current Location</label>
-            <input type="text" class="form-control" value="CDMX, Mexico">
+          <div class="row">
+            <div class="col col-6">
+              <div class="form-group">
+                <label class="form-label">Current Role / Title</label>
+                <input type="text" class="form-control" value="Chief Operating Officer">
+              </div>
+            </div>
+            <div class="col col-6">
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-control" value="CDMX, Mexico">
+              </div>
+            </div>
           </div>
-          <div class="col col-6 form-group">
-            <label class="form-label">Job Status</label>
+
+          <div class="form-group">
+            <label class="form-label">LinkedIn Profile URL</label>
+            <input type="url" class="form-control" value="https://linkedin.com/in/alejandra-vargas">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Work Preferences</label>
+            <div class="d-flex gap-md mt-sm">
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> Remote
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> Hybrid
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> On-site
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Open to Opportunities</label>
             <select class="form-control">
-              <option selected>Open to Offers</option>
-              <option>Actively Looking</option>
-              <option>Not Looking</option>
+              <option selected>Actively Looking</option>
+              <option>Open to the Right Role</option>
+              <option>Not Currently Looking</option>
             </select>
           </div>
-        </div>
 
-        <!-- Privacy Settings Info -->
-        <div class="mt-lg p-md" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius);">
-          <div class="form-group mb-0 d-flex justify-content-between align-items-center">
-             <div>
-                <p class="font-semibold m-0">Anonymous Mode</p>
-                <p class="text-muted m-0" style="font-size: 0.875rem;">Hide your name and photo from companies until you apply.</p>
-             </div>
-             <input type="checkbox" checked style="width: 20px; height: 20px;">
+          <!-- Executive Summary -->
+          <div class="section-divider">
+            <div class="section-divider-line"></div>
+            <span class="section-divider-text">Executive Summary</span>
+            <div class="section-divider-line"></div>
           </div>
-        </div>
-      </div>
 
-      <div class="card p-xl mb-lg">
-        <h2 class="mb-lg" style="font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm);">Executive Summary</h2>
-        <div class="form-group mb-0">
-          <label class="form-label">Bio Details</label>
-          <textarea class="form-control" rows="5">15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit economics, and leading international expansion. Passionate about operational excellence and data-driven decision making.</textarea>
-        </div>
-      </div>
-
-      <div class="card p-xl mb-lg">
-        <div class="d-flex justify-content-between align-items-center mb-lg border-bottom pb-sm">
-          <h2 class="m-0" style="font-size: 1.5rem;">Professional Experience</h2>
-          <button class="btn btn-secondary" style="padding: 4px 12px;">+ Add Role</button>
-        </div>
-        
-        <!-- Editable Experience Block -->
-        <div class="p-md mb-md" style="border: 1px solid var(--color-border-dark); border-radius: var(--radius);">
           <div class="form-group">
-             <label class="form-label">Job Title</label>
-             <input type="text" class="form-control" value="Chief Operating Officer">
+            <label class="form-label">Summary <span class="text-subtle font-medium">(Shown to employers in anonymized form)</span></label>
+            <textarea class="form-control" rows="5" style="resize: vertical;">15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit economics, and leading international expansion.</textarea>
+            <span class="form-hint">Write in 3rd person to maintain anonymity when shared with employers.</span>
           </div>
-          <div class="row">
-             <div class="col col-6 form-group">
-               <label class="form-label">Company</label>
-               <input type="text" class="form-control" value="AeroSystems MX">
-             </div>
-             <div class="col col-6 form-group">
-               <label class="form-label">Dates</label>
-               <input type="text" class="form-control" value="2021 - Present">
-             </div>
+
+          <!-- Skills -->
+          <div class="section-divider">
+            <div class="section-divider-line"></div>
+            <span class="section-divider-text">Core Competencies</span>
+            <div class="section-divider-line"></div>
           </div>
-          <div class="form-group mb-0">
-             <label class="form-label">Description</label>
-             <textarea class="form-control" rows="3">Led global hardware manufacturing and supply chain logistics operations. Reduced supply chain latency by 20% while scaling production volume 3x across 4 international facilities in Mexico and Brazil.</textarea>
+
+          <div class="form-group">
+            <label class="form-label">Skills (comma-separated)</label>
+            <input type="text" class="form-control" value="P&L Management, M&A Integration, Supply Chain, Org Design, GTM Strategy, LATAM Markets">
+            <span class="form-hint">Add up to 12 key skills. These appear unmodified to employers.</span>
           </div>
-        </div>
 
-      </div>
+          <!-- CV -->
+          <div class="section-divider">
+            <div class="section-divider-line"></div>
+            <span class="section-divider-text">Resume / CV</span>
+            <div class="section-divider-line"></div>
+          </div>
 
-      <div class="card p-xl mb-xl">
-        <h2 class="mb-lg" style="font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm);">Resume / CV</h2>
-        <div class="p-xl text-center" style="border: 2px dashed var(--color-border-dark); background-color: var(--color-surface); border-radius: var(--radius);">
-           <p class="font-semibold text-main">A_Vargas_Executive_CV.pdf (2mb)</p>
-           <div class="d-flex justify-content-center gap-md mt-md">
-             <button class="btn btn-secondary">Upload New File</button>
-             <button class="btn" style="color: var(--color-danger-text); border: 1px solid var(--color-danger-border);">Remove File</button>
-           </div>
-        </div>
-      </div>
+          <div class="form-group mb-xl">
+            <label class="form-label">Current CV on File</label>
+            <div class="file-upload-zone">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" color="#868E96" style="margin: 0 auto 8px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">A_Vargas_Executive_CV.pdf</p>
+              <p class="text-subtle mb-sm" style="font-size: var(--font-size-xs);">Updated 2 weeks ago · 214 KB</p>
+              <button type="button" class="btn btn-secondary btn-sm">Replace File</button>
+            </div>
+          </div>
 
-      <div class="text-right mb-xxl">
-         <button class="btn btn-secondary mr-md">Cancel</button>
-         <a href="profile.html" class="btn btn-primary px-xl">Save Changes</a>
+          <!-- Actions -->
+          <div class="d-flex justify-content-between align-items-center" style="border-top: 1px solid var(--color-border); padding-top: var(--space-lg);">
+            <a href="profile.html" class="btn btn-secondary">Cancel</a>
+            <a href="profile.html" class="btn btn-primary">Save Changes</a>
+          </div>
+        </form>
       </div>
 
     </div>

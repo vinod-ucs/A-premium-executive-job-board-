@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing — ExecBoard MX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container" style="max-width: 100%; padding: 0 var(--space-xl);">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX <span style="font-size: var(--font-size-xs); font-weight: 400; color: var(--grey-500); margin-left: 8px; border: none; padding: 0; letter-spacing: 0;">Employer Portal</span></a>
+        <div class="d-flex align-items-center gap-md">
+          <span class="font-medium text-muted" style="font-size: var(--font-size-sm);">Acme Corp México</span>
+          <div class="avatar avatar-sm">AC</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <p class="sidebar-section-label" style="margin-top: 0;">Main</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Job Postings
+        </a>
+        <a href="company-profile.html" class="sidebar-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          Company Profile
+        </a>
+        <a href="company-chat.html" class="sidebar-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Messages
+        </a>
+      </nav>
+      <p class="sidebar-section-label">Account</p>
+      <nav class="sidebar-nav">
+        <a href="company-billing.html" class="sidebar-link active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Billing
+        </a>
+        <a href="company-settings.html" class="sidebar-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </nav>
+      <div style="margin-top: auto; padding-top: var(--space-xl);">
+        <a href="post-job.html" class="btn btn-primary btn-block mb-md" style="text-align: center;">+ Post New Role</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="mb-xl">
+        <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Billing & Subscription</h1>
+        <p class="text-muted mb-0" style="font-size: var(--font-size-sm);">Manage your plan, payment method, and view invoice history.</p>
+      </div>
+
+      <!-- Current Plan -->
+      <div class="card-dark mb-lg" style="border-radius: var(--radius-xl);">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <p class="section-label" style="color: var(--grey-500); margin-bottom: 4px;">Current Plan</p>
+            <h2 style="font-size: var(--font-size-3xl); color: var(--grey-0); margin-bottom: 4px;">Professional</h2>
+            <p style="color: var(--grey-400); margin-bottom: var(--space-md);">Up to 5 active postings per month &nbsp;·&nbsp; Priority curation</p>
+            <div class="d-flex gap-md">
+              <div>
+                <div class="section-label" style="color: var(--grey-600);">Renews</div>
+                <div style="color: var(--grey-200); font-weight: 600; font-size: var(--font-size-sm);">May 17, 2025</div>
+              </div>
+              <div>
+                <div class="section-label" style="color: var(--grey-600);">Monthly Cost</div>
+                <div style="color: var(--grey-200); font-weight: 600; font-size: var(--font-size-sm);">$14,900 MXN + IVA</div>
+              </div>
+              <div>
+                <div class="section-label" style="color: var(--grey-600);">Active Jobs</div>
+                <div style="color: var(--grey-200); font-weight: 600; font-size: var(--font-size-sm);">3 / 5</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-sm" style="border-color: var(--grey-600); color: var(--grey-300);">Change Plan</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Payment Method -->
+        <div class="col col-6">
+          <div class="card mb-lg">
+            <div class="d-flex justify-content-between align-items-center mb-lg">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: 0;">Payment Method</h4>
+              <button class="btn btn-ghost btn-sm">Update</button>
+            </div>
+            <div class="d-flex align-items-center gap-md">
+              <div style="width: 48px; height: 32px; background-color: var(--grey-100); border: 1px solid var(--grey-200); border-radius: var(--radius); display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 10px; font-weight: 800; color: var(--grey-600);">VISA</span>
+              </div>
+              <div>
+                <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">•••• •••• •••• 4821</div>
+                <div class="text-subtle" style="font-size: var(--font-size-xs);">Expires 08/2027</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing Email -->
+        <div class="col col-6">
+          <div class="card mb-lg">
+            <div class="d-flex justify-content-between align-items-center mb-lg">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: 0;">Billing Email</h4>
+              <button class="btn btn-ghost btn-sm">Edit</button>
+            </div>
+            <div class="font-semibold text-main" style="font-size: var(--font-size-sm);">facturacion@acmecorp.mx</div>
+            <div class="text-subtle mt-xs" style="font-size: var(--font-size-xs);">Invoices sent as PDF to this address.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Invoice History -->
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="d-flex justify-content-between align-items-center" style="padding: var(--space-lg); border-bottom: 1px solid var(--color-border);">
+          <h4 style="margin-bottom: 0; font-size: var(--font-size-base);">Invoice History</h4>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Invoice</th>
+              <th>Plan</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th style="text-align: right;">Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">INV-0024</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Professional</td>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">$14,900 MXN</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Apr 17, 2025</td>
+              <td><span class="badge badge-success">Paid</span></td>
+              <td style="text-align: right;"><button class="btn btn-ghost btn-sm">PDF</button></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">INV-0021</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Professional</td>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">$14,900 MXN</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Mar 17, 2025</td>
+              <td><span class="badge badge-success">Paid</span></td>
+              <td style="text-align: right;"><button class="btn btn-ghost btn-sm">PDF</button></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">INV-0018</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Starter</td>
+              <td class="font-semibold text-main" style="font-size: var(--font-size-sm);">$7,900 MXN</td>
+              <td class="text-muted" style="font-size: var(--font-size-sm);">Feb 17, 2025</td>
+              <td><span class="badge badge-success">Paid</span></td>
+              <td style="text-align: right;"><button class="btn btn-ghost btn-sm">PDF</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

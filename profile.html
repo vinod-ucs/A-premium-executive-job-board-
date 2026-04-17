@@ -1,137 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candidate Profile - ExecBoard MX</title>
+  <title>My Profile — ExecBoard MX</title>
+  <meta name="description" content="Manage your executive profile on ExecBoard MX.">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body style="background-color: var(--grey-50);">
 
-<body style="background-color: var(--color-surface);">
-
-  <!-- Logged in Header -->
-  <header class="header bg-white">
+  <!-- Header: Logged In -->
+  <header class="header">
     <div class="container">
-      <div class="row align-items-center justify-content-between">
-        <div class="col col-3">
-          <a href="index.html" class="logo">ExecBoard MX</a>
-        </div>
-        <div class="col col-6 d-flex justify-content-center">
-          <nav class="nav-links">
-            <a href="jobs.html">Search Jobs</a>
-            <a href="#">Saved Roles (2)</a>
-          </nav>
-        </div>
-        <div class="col col-3 d-flex justify-content-end align-items-center gap-md">
-          <span class="text-muted font-semibold">Alejandra Vargas</span>
-          <div style="width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-border-dark);"></div>
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <nav class="nav-links">
+          <a href="jobs.html">Search Roles</a>
+          <a href="#">Saved Roles <span class="badge badge-default" style="margin-left: 4px;">2</span></a>
+        </nav>
+        <div class="d-flex align-items-center gap-md">
+          <span class="font-medium text-muted" style="font-size: var(--font-size-sm);">Alejandra Vargas</span>
+          <div class="avatar avatar-sm">AV</div>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="py-xxl">
+  <main style="padding: var(--space-xxl) 0;">
     <div class="container">
 
-      <!-- Profile Header Card -->
-      <div class="row mb-lg">
-        <div class="col col-12">
-          <div class="card d-flex align-items-center justify-content-between"
-            style="border-radius: var(--radius) var(--radius) 0 0; padding: var(--space-xl);">
-            <div class="d-flex align-items-center" style="gap: var(--space-lg);">
-              <div
-                style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--color-border-dark); flex-shrink: 0;">
-              </div>
-              <div>
-                <h1 style="margin-bottom: 4px; font-size: 2.5rem;">Alejandra Vargas</h1>
-                <p class="font-semibold text-main mb-sm" style="font-size: 1.25rem;">Chief Operating Officer / VP
-                  Operations</p>
-                <p class="text-muted">CDMX, Mexico • Open to Remote LATAM • <span class="badge badge-success"
-                    style="font-size: 0.75rem;">Open to Offers</span></p>
-                <!-- Privacy Note for Users -->
-                <div class="mt-sm p-sm"
-                  style="background-color: var(--color-warning-bg); border: 1px solid var(--color-warning-border); border-radius: 4px; display: inline-block;">
-                  <span class="text-warning font-semibold"
-                    style="font-size: 0.75rem; color: var(--color-warning-text);">Privacy Mode Active: Companies only
-                    see your skills and experience when you apply. Your name and contact details are hidden until you
-                    connect.</span>
-                </div>
-              </div>
-            </div>
+      <!-- Profile Header -->
+      <div class="card mb-lg" style="padding: var(--space-xl);">
+        <div class="d-flex align-items-start justify-content-between">
+          <div class="d-flex align-items-center gap-lg">
+            <div class="avatar avatar-xl" style="font-size: var(--font-size-3xl); font-weight: 800;">AV</div>
             <div>
-              <button class="btn btn-secondary">Edit Profile</button>
+              <h1 style="font-size: var(--font-size-4xl); margin-bottom: 4px;">Alejandra Vargas</h1>
+              <p class="font-semibold text-main mb-sm" style="font-size: var(--font-size-lg);">Chief Operating Officer</p>
+              <p class="text-muted mb-sm" style="font-size: var(--font-size-sm);">CDMX, Mexico &nbsp;·&nbsp; Open to Remote LATAM</p>
+              <div class="d-flex align-items-center gap-sm flex-wrap">
+                <span class="badge badge-success">Open to Offers</span>
+                <span class="badge badge-default">Candidate #8842</span>
+              </div>
             </div>
           </div>
+          <div class="d-flex flex-column align-items-end gap-sm">
+            <a href="profile-edit.html" class="btn btn-secondary">Edit Profile</a>
+          </div>
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="notice-banner notice-banner-warning mt-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span style="font-size: var(--font-size-sm);"><strong>Privacy Mode Active.</strong> Employers only see your anonymous executive summary, skills, and anonymized experience. Your name, current employer, and contact details are hidden until you accept a connection request.</span>
         </div>
       </div>
 
-      <!-- Main Profile Info -->
+      <!-- 2-Column Layout -->
       <div class="row">
-        <!-- Experience & About -->
+        <!-- Main: Experience -->
         <div class="col col-8">
+
+          <!-- Executive Summary -->
           <div class="card mb-lg">
-            <h3 class="mb-lg">Executive Summary</h3>
-            <p>15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM
-              from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit
-              economics, and leading international expansion. Passionate about operational excellence and data-driven
-              decision making.</p>
-          </div>
-
-          <div class="card">
             <div class="d-flex justify-content-between align-items-center mb-lg">
-              <h3 class="mb-0">Professional Experience</h3>
-              <button class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.875rem;">+ Add</button>
+              <h3 style="margin-bottom: 0;">Executive Summary</h3>
+              <button class="btn btn-ghost btn-sm">Edit</button>
+            </div>
+            <p>15+ years of operational leadership experience scaling technology organizations across Mexico and LATAM from Series B through IPO. Specialized in building cross-functional organizations, optimizing unit economics, and leading international expansion. Passionate about operational excellence and data-driven decision making.</p>
+          </div>
+
+          <!-- Professional Experience -->
+          <div class="card mb-lg">
+            <div class="d-flex justify-content-between align-items-center mb-lg">
+              <h3 style="margin-bottom: 0;">Professional Experience</h3>
+              <button class="btn btn-secondary btn-sm">+ Add</button>
             </div>
 
-            <!-- Exp Item 1 -->
             <div class="mb-xl">
-              <h4 class="mb-0">Chief Operating Officer</h4>
-              <p class="font-semibold text-main mb-sm">AeroSystems MX • 2021 - Present</p>
-              <p>Led global hardware manufacturing and supply chain logistics operations. Reduced supply chain latency
-                by 20% while scaling production volume 3x across 4 international facilities in Mexico and Brazil.</p>
+              <div class="d-flex justify-content-between align-items-start mb-xs">
+                <div>
+                  <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">Chief Operating Officer</h4>
+                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">AeroSystems MX</p>
+                </div>
+                <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2021 – Present</span>
+              </div>
+              <p style="font-size: var(--font-size-sm);">Led global hardware manufacturing and supply chain logistics operations. Reduced supply chain latency by 20% while scaling production volume 3× across 4 international facilities in Mexico and Brazil.</p>
             </div>
 
-            <div class="hr"></div>
+            <hr class="hr">
 
-            <!-- Exp Item 2 -->
             <div class="mb-xl">
-              <h4 class="mb-0">VP of Operations</h4>
-              <p class="font-semibold text-main mb-sm">CloudScale Networks LATAM • 2017 - 2021</p>
-              <p>Managed a team of 40+ operational staff spanning HR, Finance, and Legal across CDMX and Monterrey.
-                Directed the post-merger integration of two newly acquired startups, consolidating operational workflows
-                efficiently.</p>
+              <div class="d-flex justify-content-between align-items-start mb-xs">
+                <div>
+                  <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">VP of Operations</h4>
+                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">CloudScale Networks LATAM</p>
+                </div>
+                <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2017 – 2021</span>
+              </div>
+              <p style="font-size: var(--font-size-sm);">Managed a team of 40+ operational staff spanning HR, Finance, and Legal across CDMX and Monterrey. Directed post-merger integration of two acquired startups, consolidating operational workflows efficiently.</p>
+            </div>
+
+            <hr class="hr">
+
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-xs">
+                <div>
+                  <h4 style="font-size: var(--font-size-lg); margin-bottom: 2px;">Director of Strategy</h4>
+                  <p class="font-medium text-main mb-xs" style="font-size: var(--font-size-sm);">Grupo Financiero Alpha</p>
+                </div>
+                <span class="text-muted" style="font-size: var(--font-size-xs); white-space: nowrap;">2013 – 2017</span>
+              </div>
+              <p style="font-size: var(--font-size-sm);">Drove corporate strategy across 6 business units with combined revenues of $4B MXN. Led implementation of OKR frameworks adopted company-wide.</p>
             </div>
           </div>
+
         </div>
 
-        <!-- Sidebar Details -->
+        <!-- Sidebar -->
         <div class="col col-4">
+
+          <!-- Core Competencies -->
           <div class="card mb-lg">
-            <h3 class="mb-md">Core Competencies</h3>
-            <div class="d-flex flex-wrap gap-sm" style="flex-direction: column;">
+            <div class="d-flex justify-content-between align-items-center mb-md">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: 0;">Core Competencies</h4>
+              <button class="btn btn-ghost btn-sm">Edit</button>
+            </div>
+            <div class="d-flex flex-wrap gap-sm">
               <span class="badge badge-default">P&L Management</span>
               <span class="badge badge-default">M&A Integration</span>
               <span class="badge badge-default">Supply Chain</span>
               <span class="badge badge-default">Org Design</span>
-              <span class="badge badge-default">Go-to-Market Strategy</span>
+              <span class="badge badge-default">GTM Strategy</span>
+              <span class="badge badge-default">LATAM Markets</span>
+              <span class="badge badge-default">Bilingual EN/ES</span>
             </div>
           </div>
 
+          <!-- Resume / CV -->
+          <div class="card mb-lg">
+            <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-sm);">Resume / CV</h4>
+            <p class="text-muted mb-md" style="font-size: var(--font-size-xs);">Your CV is automatically scrubbed of PII (Personally Identifiable Information) before being shared with employers to prevent bias.</p>
+            <div class="file-upload-zone" style="padding: var(--space-md);">
+              <p class="font-semibold text-main mb-xs" style="font-size: var(--font-size-sm);">A_Vargas_Executive_CV.pdf</p>
+              <p class="text-subtle mb-sm" style="font-size: var(--font-size-xs);">Updated 2 weeks ago</p>
+              <button class="btn btn-secondary btn-block btn-sm">Update File</button>
+            </div>
+          </div>
+
+          <!-- Profile Health -->
           <div class="card">
-            <h3 class="mb-md">Resume / CV</h3>
-            <!-- Note to candidate -->
-            <p class="text-muted mb-md" style="font-size: 0.75rem;">Your CV is scrubbed of PII (Personally Identifiable
-              Information) before being sent to employers to prevent bias.</p>
-
-            <div class="p-md text-center"
-              style="border: 1px dashed var(--color-border-dark); border-radius: var(--radius); background-color: var(--color-surface);">
-              <p class="font-semibold text-main mb-sm">A_Vargas_Executive_CV.pdf</p>
-              <p class="text-muted" style="font-size: 0.75rem;">Updated 2 weeks ago</p>
-              <button class="btn btn-secondary mt-sm btn-block" style="padding: 6px;">Update File</button>
+            <h4 style="font-size: var(--font-size-base); margin-bottom: var(--space-md);">Profile Strength</h4>
+            <div class="d-flex flex-column gap-sm">
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <span class="text-muted">Summary</span>
+                <span class="badge badge-success">Complete</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <span class="text-muted">Experience</span>
+                <span class="badge badge-success">Complete</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <span class="text-muted">Skills</span>
+                <span class="badge badge-success">Complete</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <span class="text-muted">CV Upload</span>
+                <span class="badge badge-success">Complete</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center" style="font-size: var(--font-size-sm);">
+                <span class="text-muted">LinkedIn</span>
+                <span class="badge badge-warning">Pending</span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -141,36 +184,39 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="row align-items-start">
-        <div class="col col-3">
-          <div class="logo mb-md">ExecBoard MX</div>
-          <p class="text-muted">A premium, curated job board for executive and leadership roles in Mexico.</p>
+      <div class="row">
+        <div class="col col-4">
+          <a href="index.html" class="logo" style="display: inline-block; margin-bottom: var(--space-lg);">ExecBoard MX</a>
+          <p>Mexico's premier executive job board.</p>
         </div>
-        <div class="col col-3">
-          <h4 class="mb-md">Candidates</h4>
-          <ul class="d-flex flex-column gap-sm" style="padding:0;">
-            <li><a href="jobs.html">Search Jobs</a></li>
+        <div class="col col-2 offset-2">
+          <h4>Candidates</h4>
+          <ul class="d-flex flex-column gap-sm">
+            <li><a href="jobs.html">Search Roles</a></li>
             <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
-        <div class="col col-3">
-          <h4 class="mb-md">Employers</h4>
-          <ul class="d-flex flex-column gap-sm" style="padding:0;">
-            <li><a href="post-job.html">Post a Job</a></li>
-            <li><a href="dashboard.html">Company Dashboard</a></li>
-            <li><a href="#">Pricing</a></li>
+        <div class="col col-2">
+          <h4>Employers</h4>
+          <ul class="d-flex flex-column gap-sm">
+            <li><a href="post-job.html">Post a Role</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
           </ul>
         </div>
-        <div class="col col-3">
-          <h4 class="mb-md">Admin</h4>
-          <ul class="d-flex flex-column gap-sm" style="padding:0;">
+        <div class="col col-2">
+          <h4>Platform</h4>
+          <ul class="d-flex flex-column gap-sm">
             <li><a href="admin.html">Admin Panel</a></li>
           </ul>
         </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 ExecBoard MX.</span>
+        <span>Built for Mexico's Executive Market</span>
       </div>
     </div>
   </footer>
 
 </body>
-
 </html>

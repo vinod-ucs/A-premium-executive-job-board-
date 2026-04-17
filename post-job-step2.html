@@ -3,149 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post Job - Company Info - ExecBoard MX</title>
+  <title>Post a Role — Step 2 — ExecBoard MX</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
   <style>
-    body { background-color: var(--color-surface); }
+    body { background-color: var(--grey-50); padding-bottom: var(--space-xxl); }
   </style>
 </head>
 <body>
 
-  <!-- Minimal Distraction-Free Header -->
-  <header class="header bg-white">
-    <div class="container text-center">
-      <a href="index.html" class="logo">ExecBoard MX <span class="text-muted" style="font-size: 0.875rem; font-weight: normal;">Employer</span></a>
+  <header class="header">
+    <div class="container" style="max-width: 100%; padding: 0 var(--space-xl);">
+      <div class="header-inner">
+        <a href="index.html" class="logo">ExecBoard MX</a>
+        <a href="dashboard.html" class="btn btn-ghost btn-sm">← Back to Dashboard</a>
+      </div>
     </div>
   </header>
 
-  <main class="py-xl">
-    <div class="container">
-      
-      <!-- Stepper / Progress -->
-      <div class="row justify-content-center mb-xl">
-        <div class="col col-8">
-          <div class="stepper">
-            <div class="step completed">
-              <div class="step-circle">1</div>
-              <span>Job Details</span>
-            </div>
-            <div class="step active">
-              <div class="step-circle">2</div>
-              <span>Company Info</span>
-            </div>
-            <div class="step">
-              <div class="step-circle">3</div>
-              <span>Settings</span>
-            </div>
-            <div class="step">
-              <div class="step-circle">4</div>
-              <span>Review</span>
-            </div>
-          </div>
+  <main style="padding-top: var(--space-xxl);">
+    <div class="container" style="max-width: 760px;">
+
+      <div class="mb-xl">
+        <h1 style="font-size: var(--font-size-3xl); margin-bottom: 4px;">Post a New Executive Role</h1>
+        <p class="text-muted mb-0">Step 2 of 4 — Candidate Requirements</p>
+      </div>
+
+      <!-- Stepper -->
+      <div class="stepper mb-xl">
+        <div class="stepper-item completed">
+          <div class="stepper-circle">✓</div>
+          <span>Role Details</span>
+        </div>
+        <div class="stepper-line completed"></div>
+        <div class="stepper-item active">
+          <div class="stepper-circle">2</div>
+          <span>Requirements</span>
+        </div>
+        <div class="stepper-line"></div>
+        <div class="stepper-item">
+          <div class="stepper-circle">3</div>
+          <span>Compensation</span>
+        </div>
+        <div class="stepper-line"></div>
+        <div class="stepper-item">
+          <div class="stepper-circle">4</div>
+          <span>Review & Submit</span>
         </div>
       </div>
 
-      <!-- Form Content -->
-      <div class="row justify-content-center">
-        
-        <!-- Main Form Body -->
-        <div class="col col-6">
-          <div class="card p-xl">
-            <h2 class="mb-lg">Step 2: Company Information</h2>
-            <p class="text-muted mb-xl">Verify or update the information for the company posting this role.</p>
+      <div class="card" style="padding: var(--space-xl);">
+        <h3 style="margin-bottom: var(--space-xl);">Step 2: Candidate Requirements</h3>
+        <form>
 
-            <form>
+          <div class="row">
+            <div class="col col-6">
               <div class="form-group">
-                <label class="form-label">Company Name</label>
-                <input type="text" class="form-control" value="FinTech Global MX">
+                <label class="form-label">Minimum Years of Experience</label>
+                <select class="form-control">
+                  <option>8+ Years</option>
+                  <option>10+ Years</option>
+                  <option selected>12+ Years</option>
+                  <option>15+ Years</option>
+                  <option>20+ Years</option>
+                </select>
               </div>
-
-              <div class="form-group">
-                <label class="form-label">Company Website</label>
-                <input type="url" class="form-control" value="https://finechglobal.mx">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Company Logo (Placeholder)</label>
-                <div class="p-lg text-center" style="border: 1px dashed var(--color-border-dark); border-radius: var(--radius); background-color: var(--color-surface);">
-                  <div style="width: 48px; height: 48px; background: var(--color-border); border-radius: 4px; margin: 0 auto 8px;"></div>
-                  <span class="text-muted" style="font-size: 0.875rem;">Logo uploaded</span>
-                </div>
-              </div>
-
-              <div class="form-group mt-lg">
-                <label class="form-label">LinkedIn Company Profile</label>
-                <input type="url" class="form-control" placeholder="https://linkedin.com/company/...">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Company Overview (for this listing)</label>
-                <textarea class="form-control" rows="5">FinTech Global is Mexico's fastest growing digital bank, currently serving 2M+ customers across the region...</textarea>
-              </div>
-
-              <div class="d-flex justify-content-between mt-xl p-t-lg" style="border-top: 1px solid var(--color-border); padding-top: var(--space-lg);">
-                <a href="post-job.html" class="btn btn-secondary">Previous: Job Details</a>
-                <a href="post-job-step3.html" class="btn btn-primary">Next: Settings</a>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Summary Pane -->
-        <div class="col col-3">
-          <div class="card p-lg sticky" style="top: 24px;">
-            <h3 class="mb-md">Review Progress</h3>
-            <div class="mb-md">
-              <div class="text-muted mb-sm" style="font-size: 0.75rem; text-transform: uppercase;">Job Title</div>
-              <div class="font-semibold" style="font-size: 0.875rem;">Chief Financial Officer</div>
             </div>
-            <div class="mb-md">
-              <div class="text-muted mb-sm" style="font-size: 0.75rem; text-transform: uppercase;">Location</div>
-              <div class="font-semibold" style="font-size: 0.875rem;">CDMX, Mexico</div>
-            </div>
-            <div class="hr"></div>
-            <h4 class="mb-sm text-main" style="font-size: 1rem;">Listing Cost</h4>
-            <div class="d-flex justify-content-between align-items-center mb-md pb-md">
-              <span class="text-muted">Standard Premium</span>
-              <span class="font-semibold text-main">$9,500 MXN</span>
+            <div class="col col-6">
+              <div class="form-group">
+                <label class="form-label">Education Level</label>
+                <select class="form-control">
+                  <option>Bachelor's Degree</option>
+                  <option selected>Master's / MBA Preferred</option>
+                  <option>MBA Required</option>
+                  <option>PhD / Doctorate</option>
+                  <option>No Preference</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
 
+          <div class="form-group">
+            <label class="form-label">Language Requirements</label>
+            <div class="d-flex gap-lg mt-sm">
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> Spanish (Native)
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> English (Business)
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> English (Fluent)
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> Portuguese
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Key Required Skills / Expertise</label>
+            <input type="text" class="form-control" placeholder="e.g. P&L Management, FinTech Regs, Cloud Architecture (AWS), Org Scaling">
+            <span class="form-hint">Comma-separated. These are used to match with qualified candidates.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Industry Background Required</label>
+            <div class="d-flex flex-wrap gap-md mt-sm">
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> FinTech / Banking
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> Retail
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox" checked> Technology / SaaS
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> Healthcare
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> Logistics
+              </label>
+              <label class="d-flex align-items-center gap-sm cursor-pointer" style="font-size: var(--font-size-sm);">
+                <input type="checkbox"> Any / Open
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group mb-0">
+            <label class="form-label">Additional Requirements</label>
+            <textarea class="form-control" rows="4" placeholder="Any additional candidate requirements not covered above…" style="resize: vertical;"></textarea>
+          </div>
+
+        </form>
       </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-lg">
+        <a href="post-job.html" class="btn btn-secondary">← Back</a>
+        <a href="post-job-step3.html" class="btn btn-primary btn-lg">Continue to Compensation →</a>
+      </div>
+
     </div>
   </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row align-items-start">
-        <div class="col col-3">
-          <div class="logo mb-md">ExecBoard MX</div>
-          <p class="text-muted">A premium, curated job board for executive and leadership roles in Mexico.</p>
-        </div>
-        <div class="col col-3">
-          <h4 class="mb-md">Candidates</h4>
-          <ul class="d-flex flex-column gap-sm" style="padding:0;">
-            <li><a href="jobs.html">Search Jobs</a></li>
-            <li><a href="profile.html">My Profile</a></li>
-          </ul>
-        </div>
-        <div class="col col-3">
-          <h4 class="mb-md">Employers</h4>
-          <ul class="d-flex flex-column gap-sm" style="padding:0;">
-            <li><a href="post-job.html">Post a Job</a></li>
-            <li><a href="dashboard.html">Company Dashboard</a></li>
-            <li><a href="#">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="col col-12 text-center mt-xl pt-lg" style="border-top: 1px solid var(--color-border);">
-          <p class="text-muted" style="font-size: 0.75rem;">© 2026 ExecBoard MX. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>
